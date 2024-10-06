@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\DoctorController;
 use App\Http\Controllers\Api\AuthController;
 // use App\Http\Controllers\Api\DesignationController;
 /*
@@ -23,6 +24,17 @@ Route::controller(AuthController::class)->group(function(){
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::controller(DoctorController::class)->group(function(){
+    Route::get('doctor/index','index');
+    Route::post('doctor/create','store');
+    Route::get('doctor/{doctor}','show');
+    Route::post('doctor/{id}','update');
+    Route::delete('doctor/{doctor}','destroy');
+    // Route::post('designation/create','store');
+});
+
+
 // Route::controller(DesignationController::class)->group(function(){
 //     Route::get('designation','index');
 //     Route::get('designation/{designation}','show');
