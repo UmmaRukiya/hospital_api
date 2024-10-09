@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\DoctorController;
+use App\Http\Controllers\Api\NurseController;
 use App\Http\Controllers\Api\AuthController;
 // use App\Http\Controllers\Api\DesignationController;
 /*
@@ -31,6 +32,14 @@ Route::controller(DoctorController::class)->group(function(){
     Route::get('doctor/{doctor}','show');
     Route::post('doctor/{id}','update');
     Route::delete('doctor/{doctor}','destroy');
+    // Route::post('designation/create','store');
+});
+Route::controller(NurseController::class)->group(function(){
+    Route::get('nurse/index','index');
+    Route::post('nurse/create','store');
+    Route::get('nurse/{nurse}','show');
+    Route::post('nurse/{id}','update');
+    Route::delete('nurse/{nurse}','destroy');
     // Route::post('designation/create','store');
 });
 
