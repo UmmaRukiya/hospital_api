@@ -4,7 +4,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\DoctorController;
 use App\Http\Controllers\Api\PatientController;
+use App\Http\Controllers\Api\EmployeController;
 use App\Http\Controllers\Api\NurseController;
+use App\Http\Controllers\Api\ScheduleController;
 use App\Http\Controllers\Api\AuthController;
 // use App\Http\Controllers\Api\DesignationController;
 /*
@@ -52,7 +54,23 @@ Route::controller(NurseController::class)->group(function(){
     // Route::post('designation/create','store');
 });
 
+Route::controller(EmployeController::class)->group(function(){
+    Route::get('employe/index','index');
+    Route::post('employe/create','store');
+    Route::get('employe/{employe}','show');
+    Route::post('employe/{id}','update');
+    Route::delete('employe/{employe}','destroy');
+    
+});
 
+Route::controller(ScheduleController::class)->group(function(){
+    Route::get('schedule/index','index');
+    Route::post('schedule/create','store');
+    Route::get('schedule/{schedule}','show');
+    Route::post('schedule/{id}','update');
+    Route::delete('schedule/{schedule}','destroy');
+    
+});
 // Route::controller(DesignationController::class)->group(function(){
 //     Route::get('designation','index');
 //     Route::get('designation/{designation}','show');
