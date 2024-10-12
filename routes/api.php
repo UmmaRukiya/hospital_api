@@ -33,7 +33,7 @@ Route::controller(DoctorController::class)->group(function(){
     Route::get('doctor/index','index');
     Route::post('doctor/create','store');
     Route::get('doctor/{doctor}','show');
-    Route::post('doctor/{id}','update');
+    Route::post('/doctor/edit/{id}','update');
     Route::delete('doctor/{doctor}','destroy');
     // Route::post('designation/create','store');
 });
@@ -43,7 +43,7 @@ Route::controller(PatientController::class)->group(function(){
     Route::get('patient/{patient}','show');
     Route::post('patient/{id}','update');
     Route::delete('patient/{patient}','destroy');
-    // Route::post('designation/create','store');
+   
 });
 Route::controller(NurseController::class)->group(function(){
     Route::get('nurse/index','index');
