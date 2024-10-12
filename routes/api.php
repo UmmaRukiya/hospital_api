@@ -7,6 +7,11 @@ use App\Http\Controllers\Api\PatientController;
 use App\Http\Controllers\Api\EmployeController;
 use App\Http\Controllers\Api\NurseController;
 use App\Http\Controllers\Api\ScheduleController;
+use App\Http\Controllers\Api\DesignationController;
+use App\Http\Controllers\Api\DepartmentController;
+use App\Http\Controllers\Api\DayController;
+use App\Http\Controllers\Api\BloodController;
+use App\Http\Controllers\Api\ShiftController;
 use App\Http\Controllers\Api\AuthController;
 // use App\Http\Controllers\Api\DesignationController;
 /*
@@ -69,7 +74,46 @@ Route::controller(ScheduleController::class)->group(function(){
     Route::get('schedule/{schedule}','show');
     Route::post('schedule/{id}','update');
     Route::delete('schedule/{schedule}','destroy');
-    
+});
+
+Route::controller(DesignationController::class)->group(function(){
+    Route::get('designation/index','index');
+    Route::post('designation/create','store');
+    Route::get('designation/{designation}','show');
+    Route::post('designation/{id}','update');
+    Route::delete('designation/{designation}','destroy');
+});
+
+Route::controller(DepartmentController::class)->group(function(){
+    Route::get('department/index','index');
+    Route::post('department/create','store');
+    Route::get('department/{department}','show');
+    Route::post('department/{id}','update');
+    Route::delete('department/{department}','destroy');
+});
+
+Route::controller(BloodController::class)->group(function(){
+    Route::get('blood/index','index');
+    Route::post('blood/create','store');
+    Route::get('blood/{blood}','show');
+    Route::post('blood/{id}','update');
+    Route::delete('blood/{blood}','destroy');
+});
+
+Route::controller(DayController::class)->group(function(){
+    Route::get('day/index','index');
+    Route::post('day/create','store');
+    Route::get('day/{day}','show');
+    Route::post('day/{id}','update');
+    Route::delete('day/{day}','destroy');
+});
+
+Route::controller(ShiftController::class)->group(function(){
+    Route::get('shift/index','index');
+    Route::post('shift/create','store');
+    Route::get('shift/{shift}','show');
+    Route::post('shift/{id}','update');
+    Route::delete('shift/{shift}','destroy');
 });
 // Route::controller(DesignationController::class)->group(function(){
 //     Route::get('designation','index');
