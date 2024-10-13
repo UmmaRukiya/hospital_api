@@ -13,6 +13,24 @@ use App\Http\Controllers\Api\DayController;
 use App\Http\Controllers\Api\BloodController;
 use App\Http\Controllers\Api\ShiftController;
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\BirthController;
+use App\Http\Controllers\Api\DeathController;
+use App\Http\Controllers\Api\AppointmentRequestController;
+use App\Http\Controllers\Api\AppointmentController;
+use App\Http\Controllers\Api\InvestCatagoriesController;
+use App\Http\Controllers\Api\InvestListController;
+use App\Http\Controllers\Api\MedicineCatagoriesController;
+use App\Http\Controllers\ApiPatientAdmitController;
+use App\Http\Controllers\Api\PatientBillDetailController;
+use App\Http\Controllers\Api\PatientPaymentController;
+use App\Http\Controllers\Api\PatientPrescribeController;
+use App\Http\Controllers\Api\PatientTestController;
+use App\Http\Controllers\Api\PatientTestDetailController;
+use App\Http\Controllers\Api\PrescribeMediController;
+use App\Http\Controllers\Api\PrescriptionMediController;
+use App\Http\Controllers\Api\PrescriptionController;
+use App\Http\Controllers\Api\RoomCatagoriesController;
+use App\Http\Controllers\Api\RoomListController;
 // use App\Http\Controllers\Api\DesignationController;
 /*
 |--------------------------------------------------------------------------
@@ -48,7 +66,7 @@ Route::controller(PatientController::class)->group(function(){
     Route::get('patient/{patient}','show');
     Route::post('patient/{id}','update');
     Route::delete('patient/{patient}','destroy');
-   
+
 });
 Route::controller(NurseController::class)->group(function(){
     Route::get('nurse/index','index');
@@ -65,7 +83,7 @@ Route::controller(EmployeController::class)->group(function(){
     Route::get('employe/{employe}','show');
     Route::post('employe/{id}','update');
     Route::delete('employe/{employe}','destroy');
-    
+
 });
 
 Route::controller(ScheduleController::class)->group(function(){
