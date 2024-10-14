@@ -133,6 +133,13 @@ Route::controller(ShiftController::class)->group(function(){
     Route::post('shift/{id}','update');
     Route::delete('shift/{shift}','destroy');
 });
+Route::controller(RoomCatagoriesController::class)->group(function(){
+    Route::get('roomcat/index','index');
+    Route::post('roomcat/create','store');
+    Route::get('roomcat/{room_cat}','show');
+    Route::post('roomcat/{id}','update');
+    Route::delete('roomcat/{room_cat}','destroy');
+});
 // Route::controller(DesignationController::class)->group(function(){
 //     Route::get('designation','index');
 //     Route::get('designation/{designation}','show');
