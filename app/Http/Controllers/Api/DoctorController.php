@@ -10,7 +10,7 @@ use App\Http\Controllers\Api\BaseController;
 class DoctorController extends BaseController
 {
     public function index(){
-        $data=Doctor::get();
+        $data=Doctor::with('designation','department')->get();
         return $this->sendResponse($data,"Doctor data");
     }
 
@@ -23,7 +23,6 @@ class DoctorController extends BaseController
     }
 
     public function update(Request $request,$id){
-
         $data=Doctor::where('id',$id)->update($request->all());
         return $this->sendResponse($id,"Doctor updated successfully");
     }

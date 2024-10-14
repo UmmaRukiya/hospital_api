@@ -9,7 +9,7 @@ use App\Http\Controllers\Api\BaseController;
 class NurseController extends BaseController
 {
     public function index(){
-        $data=Nurse::get();
+        $data=Nurse::with('role','blood')->get();
         return $this->sendResponse($data,"Nurse data");
     }
 
