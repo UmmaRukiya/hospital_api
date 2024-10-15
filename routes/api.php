@@ -20,7 +20,7 @@ use App\Http\Controllers\Api\AppointmentController;
 use App\Http\Controllers\Api\InvestCatagoriesController;
 use App\Http\Controllers\Api\InvestListController;
 use App\Http\Controllers\Api\MedicineCatagoriesController;
-use App\Http\Controllers\ApiPatientAdmitController;
+use App\Http\Controllers\Api\PatientAdmitController;
 use App\Http\Controllers\Api\PatientBillDetailController;
 use App\Http\Controllers\Api\PatientPaymentController;
 use App\Http\Controllers\Api\PatientPrescribeController;
@@ -139,6 +139,13 @@ Route::controller(RoomCatagoriesController::class)->group(function(){
     Route::get('roomcat/{room_cat}','show');
     Route::post('roomcat/{id}','update');
     Route::delete('roomcat/{room_cat}','destroy');
+});
+Route::controller(RoomListController::class)->group(function(){
+    Route::get('roomlist/index','index');
+    Route::post('roomlist/create','store');
+    Route::get('roomlist/{room_list}','show');
+    Route::post('roomlist/{id}','update');
+    Route::delete('roomlist/{room_list}','destroy');
 });
 // Route::controller(DesignationController::class)->group(function(){
 //     Route::get('designation','index');

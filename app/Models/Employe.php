@@ -19,4 +19,8 @@ class Employe extends Model
     {
         return $this->belongsTo(Role::class);
     }
+    public function blood()
+    {
+        return $this->belongsTo(Blood::class);
+    }
 }
