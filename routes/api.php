@@ -31,6 +31,7 @@ use App\Http\Controllers\Api\PrescriptionMediController;
 use App\Http\Controllers\Api\PrescriptionController;
 use App\Http\Controllers\Api\RoomCatagoriesController;
 use App\Http\Controllers\Api\RoomListController;
+use App\Http\Controllers\Api\RoleController;
 // use App\Http\Controllers\Api\DesignationController;
 /*
 |--------------------------------------------------------------------------
@@ -146,6 +147,16 @@ Route::controller(RoomListController::class)->group(function(){
     Route::get('roomlist/{room_list}','show');
     Route::post('roomlist/{id}','update');
     Route::delete('roomlist/{room_list}','destroy');
+});
+Route::controller(AppointmentController::class)->group(function(){
+    Route::get('appointment/index','index');
+    Route::post('appointment/create','store');
+    Route::get('appointment/{appointment}','show');
+    Route::post('appointment/{id}','update');
+    Route::delete('appointment/{appointment}','destroy');
+});
+Route::controller(RoleController::class)->group(function(){
+    Route::get('role/index','index');
 });
 // Route::controller(DesignationController::class)->group(function(){
 //     Route::get('designation','index');

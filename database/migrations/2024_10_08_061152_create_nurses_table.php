@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('gender')->nullable();
             $table->date('birth_date')->nullable();
             $table->bigInteger('blood_id')->nullable();
-            $table->binary('image')->nullable();
+            $table->string('image')->nullable();
             $table->string('present_address')->nullable();
             $table->string('permanent_address')->nullable();
             $table->bigInteger('status')->nullable();

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->bigInteger('contact_no_en');
             $table->string('present_address')->nullable();
             $table->string('permanent_address')->nullable();
-            $table->binary('image')->nullable();
+            $table->string('image')->nullable();
             $table->date('birth_date')->nullable();
             $table->string('gender')->nullable();
             $table->bigInteger('blood_id')->nullable();

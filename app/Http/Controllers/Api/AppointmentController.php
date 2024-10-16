@@ -10,7 +10,7 @@ use App\Http\Controllers\Api\BaseController;
 class AppointmentController extends BaseController
 {
     public function index(){
-        $data=Appointment::get();
+        $data=Appointment::with('doctor')->get();
         return $this->sendResponse($data,"Appointment data");
     }
 

@@ -12,12 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('appointments', function (Blueprint $table) {
-            $table->integer('patient_id');
-            $table->integer('employ_id');
+            $table->string('patient_name');
+            $table->integer('doctor_id');
             $table->date('app_date');
             $table->bigInteger('serial')->nullable();
             $table->text('problem')->nullable();
-            $table->string('approve')->nullable();
+            $table->time('time')->nullable();
             $table->integer('status')->default(0)->comment('0 inactive,1 active');
             $table->timestamps();
         });

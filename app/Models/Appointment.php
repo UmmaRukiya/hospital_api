@@ -8,5 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Appointment extends Model
 {
     use HasFactory;
-    protected $fillable=['patient_id', 'employ_id', 'app_date', 'serial', 'problem', 'approve', 'status'];
+    protected $fillable=['patient_name', 'doctor_id', 'app_date', 'serial', 'problem', 'time', 'status'];
+
+    /**
+     * Get the user that owns the Appointment
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function doctor()
+    {
+        return $this->belongsTo(Doctor::class);
+    }
 }
