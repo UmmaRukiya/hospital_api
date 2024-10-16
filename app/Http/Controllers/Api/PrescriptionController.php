@@ -10,7 +10,7 @@ use App\Http\Controllers\Api\BaseController;
 class PrescriptionController extends BaseController
 {
     public function index(){
-        $data=Prescription::get();
+        $data=Prescription::with('patient')->get();
         return $this->sendResponse($data,"Prescription data");
     }
 

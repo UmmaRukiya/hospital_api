@@ -158,6 +158,14 @@ Route::controller(AppointmentController::class)->group(function(){
 Route::controller(RoleController::class)->group(function(){
     Route::get('role/index','index');
 });
+
+Route::controller(PrescriptionController::class)->group(function(){
+    Route::get('prescription/index','index');
+    Route::post('prescription/create','store');
+    Route::get('prescription/{prescription}','show');
+    Route::post('prescription/{id}','update');
+    Route::delete('prescription/{prescription}','destroy');
+});
 // Route::controller(DesignationController::class)->group(function(){
 //     Route::get('designation','index');
 //     Route::get('designation/{designation}','show');
