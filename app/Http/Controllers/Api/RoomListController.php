@@ -10,7 +10,7 @@ use App\Http\Controllers\Api\BaseController;
 class RoomListController extends BaseController
 {
     public function index(){
-        $data=Room_List::get();
+        $data=Room_List::with('room_cat')->get();
         return $this->sendResponse($data,"Room_List data");
     }
 
