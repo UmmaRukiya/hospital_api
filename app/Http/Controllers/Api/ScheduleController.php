@@ -10,7 +10,7 @@ use App\Http\Controllers\Api\BaseController;
 class ScheduleController extends BaseController
 {
     public function index(){
-        $data=Schedule::get();
+        $data=Schedule::with('employe','day','shift')->get();
         return $this->sendResponse($data,"Schedule data");
     }
 
