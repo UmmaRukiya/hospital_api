@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Employe extends Model
 {
     use HasFactory;
-    protected $fillable=['role_id', 'name_en', 'email', 'contact_no_en',  'present_address', 'permanent_address', 'image', 'birth_date', 'gender', 'blood_id', 'status'];
+    protected $fillable=['role_id', 'name', 'email', 'contact', 'image', 'birth_date', 'gender', 'blood_id',  'present_address', 'permanent_address', 'status'];
 
     /**
      * Get the role that owns the Employe

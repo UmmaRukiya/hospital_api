@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Patient_payment extends Model
 {
     use HasFactory;
-    protected $fillable=['patient_id', 'date', 'admit_id', 'amount'];
+    protected $fillable=['patient_bill_id', 'pay_date', 'admit_id', 'amount'];
 }

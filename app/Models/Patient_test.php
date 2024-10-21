@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Patient_test extends Model
 {
     use HasFactory;
-    protected $fillable=['patient_id', 'sub_price', 'vat', 'discount', 'total_amount', 'paid', 'admit_id', 'status'];
+    protected $fillable=['patient_id', 'admit_id', 'sub_price', 'vat', 'discount', 'total_amount', 'paid', 'status'];
 }

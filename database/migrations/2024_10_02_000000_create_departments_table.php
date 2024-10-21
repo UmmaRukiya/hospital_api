@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('dep_name');
             $table->string('dep_des')->nullable();
-            $table->integer('status')->default(0)->comment('0 inactive,1 active');
             $table->timestamps();
         });
     }
