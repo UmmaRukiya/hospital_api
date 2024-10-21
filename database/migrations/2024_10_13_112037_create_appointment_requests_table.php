@@ -14,14 +14,14 @@ return new class extends Migration
         Schema::create('appointment_requests', function (Blueprint $table) {
             $table->id();
             $table->integer('department_id');
-            $table->integer('doctor_id');
-            $table->string('name')->nullable();
+            $table->foreignId('doctor_id')->constrained();
+            $table->string('patient_name')->nullable();
             $table->string('email', 100)->nullable();
             $table->string('phone', 100)->nullable();
             $table->string('gender')->nullable();
             $table->integer('blood_id')->nullable();
             $table->text('details')->nullable()->default('text');
-            $table->date('appdate')->nullable();
+            $table->date('app_date')->nullable();
             $table->integer('status')->default(0)->comment('0 inactive,1 active');
             $table->timestamps();
         });

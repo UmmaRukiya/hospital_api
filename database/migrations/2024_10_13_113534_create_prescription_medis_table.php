@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('prescription_id');
             $table->string('medi_name')->nullable();
-            $table->string('type')->nullable();
+            $table->integer('type')->nullable();
             $table->string('dose')->nullable();
             $table->text('note')->nullable();
             $table->string('duration')->nullable();

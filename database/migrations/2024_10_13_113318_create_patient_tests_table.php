@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('patient_tests', function (Blueprint $table) {
             $table->id();
-            $table->integer('patient_id');
+            $table->foreignId('patient_id')->references('id')->on('patients');
+            $table->integer('admit_id')->nullable();
             $table->decimal('sub_price',6,2)->nullable();
             $table->decimal('vat',6,2)->nullable();
             $table->decimal('discount',6,2)->nullable();
             $table->decimal('total_amount',8,2)->nullable();
             $table->decimal('paid',8,2)->nullable();
-            $table->integer('admit_id')->nullable();
             $table->integer('status')->nullable();
             $table->timestamps();
         });

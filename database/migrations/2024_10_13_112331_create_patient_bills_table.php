@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('patient_bills', function (Blueprint $table) {
             $table->id();
-            $table->integer('patient_id');
+            $table->foreignId('patient_id')->references('id')->on('patients');
             $table->decimal('sub_amount',10,2)->nullable();
             $table->decimal('discount',10,2)->nullable();
             $table->decimal('tax',10,2)->nullable();
             $table->decimal('total_amount',10,2)->nullable();
-            $table->date('date')->nullable();
+            $table->date('bill_date')->nullable();
             $table->timestamps();
         });
     }

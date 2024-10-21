@@ -17,6 +17,6 @@ class Prescription extends Model
      */
     public function patient()
     {
-        return $this->belongsTo(Patient::class, 'foreign_key', 'other_key');
+        return $this->belongsTo(Patient::class);
     }
 }

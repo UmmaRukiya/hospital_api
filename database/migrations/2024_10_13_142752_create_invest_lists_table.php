@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('invest_lists', function (Blueprint $table) {
             $table->id();
             $table->integer('inv_cat_id')->nullable();
-            $table->string('invset_name');
+            $table->string('invset_name')->nullable();
             $table->text('description')->nullable()->default('text');
             $table->decimal('price',6,2)->nullable();
             $table->integer('status')->default(0)->comment('0 inactive,1 active');

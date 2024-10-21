@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('prescriptions', function (Blueprint $table) {
             $table->id();
-            $table->integer('patient_id');
+            $table->foreignId('patient_id')->references('id')->on('patients');
             $table->string('cc')->nullable();
             $table->string('inv')->nullable();
             $table->text('advice')->nullable();

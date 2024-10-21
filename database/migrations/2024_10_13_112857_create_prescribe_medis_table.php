@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('prescribe_medis', function (Blueprint $table) {
             $table->id();
             $table->integer('prescribe_id');
-            $table->integer('medicine_cat_id');
-            $table->string('medi_name');
+            $table->integer('medicine_cat_id')->nullable();
+            $table->string('medi_name')->nullable();
             $table->string('dose')->nullable();
             $table->timestamps();
         });

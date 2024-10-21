@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('patient_bill_id');
             $table->string('particular')->nullable();
-            $table->decimal('amount',10,2);
+            $table->decimal('amount',10,2)->nullable();
             $table->timestamps();
         });
     }

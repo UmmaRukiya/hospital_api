@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('schedules', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('employe_id')->nullable();
-            $table->bigInteger('day_id')->nullable();
-            $table->bigInteger('shift_id')->nullable();
-            $table->bigInteger('status')->nullable();
+            $table->integer('employe_id')->nullable();
+            $table->integer('day_id')->nullable();
+            $table->integer('shift_id')->nullable();
+            $table->integer('status')->nullable();
             $table->timestamps();
         });
     }

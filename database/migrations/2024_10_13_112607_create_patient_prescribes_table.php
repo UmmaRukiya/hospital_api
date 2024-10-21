@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('patient_prescribes', function (Blueprint $table) {
             $table->id();
-            $table->integer('patient_id');
+            $table->foreignId('patient_id')->references('id')->on('patients');
             $table->string('cc')->nullable();
             $table->integer('inv_list_id')->nullable();
             $table->text('advice')->nullable()->default('text');
-            $table->integer('status')->nullable()->default(1);
+            $table->integer('status')->nullable();
             $table->timestamps();
         });
     }
