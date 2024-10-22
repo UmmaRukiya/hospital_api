@@ -53,6 +53,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::controller(RoleController::class)->group(function(){
+    Route::get('role/index','index');
+});
+
 Route::controller(DoctorController::class)->group(function(){
     Route::get('doctor/index','index');
     Route::post('doctor/create','store');
@@ -155,9 +159,6 @@ Route::controller(AppointmentController::class)->group(function(){
     Route::post('appointment/{id}','update');
     Route::delete('appointment/{appointment}','destroy');
 });
-Route::controller(RoleController::class)->group(function(){
-    Route::get('role/index','index');
-});
 
 Route::controller(PrescriptionController::class)->group(function(){
     Route::get('prescription/index','index');
@@ -165,6 +166,118 @@ Route::controller(PrescriptionController::class)->group(function(){
     Route::get('prescription/{prescription}','show');
     Route::post('prescription/{id}','update');
     Route::delete('prescription/{prescription}','destroy');
+});
+
+Route::controller(InvestCatagoriesController::class)->group(function(){
+    Route::get('invest_cat/index','index');
+    Route::post('invest_cat/create','store');
+    Route::get('invest_cat/{invest_cat}','show');
+    Route::post('invest_cat/{id}','update');
+    Route::delete('invest_cat/{invest_cat}','destroy');
+});
+
+Route::controller(InvestListController::class)->group(function(){
+    Route::get('invest_list/index','index');
+    Route::post('invest_list/create','store');
+    Route::get('invest_list/{invest_list}','show');
+    Route::post('invest_list/{id}','update');
+    Route::delete('invest_list/{invest_list}','destroy');
+});
+
+Route::controller(MedicineCatagoriesController::class)->group(function(){
+    Route::get('medicine_cat/index','index');
+    Route::post('medicine_cat/create','store');
+    Route::get('medicine_cat/{medicine_cat}','show');
+    Route::post('medicine_cat/{id}','update');
+    Route::delete('medicine_cat/{medicine_cat}','destroy');
+});
+
+Route::controller(PatientAdmitController::class)->group(function(){
+    Route::get('patient_admit/index','index');
+    Route::post('patient_admit/create','store');
+    Route::get('patient_admit/{patient_admit}','show');
+    Route::post('patient_admit/{id}','update');
+    Route::delete('patient_admit/{patient_admit}','destroy');
+});
+
+Route::controller(PatientBillDetailController::class)->group(function(){
+    Route::get('patient_bill_detail/index','index');
+    Route::post('patient_bill_detail/create','store');
+    Route::get('patient_bill_detail/{patient_bill_detail}','show');
+    Route::post('patient_bill_detail/{id}','update');
+    Route::delete('patient_bill_detail/{patient_bill_detail}','destroy');
+});
+
+Route::controller(PatientPaymentController::class)->group(function(){
+    Route::get('patient_payment/index','index');
+    Route::post('patient_payment/create','store');
+    Route::get('patient_payment/{patient_payment}','show');
+    Route::post('patient_payment/{id}','update');
+    Route::delete('patient_payment/{patient_payment}','destroy');
+});
+
+Route::controller(PatientPrescribeController::class)->group(function(){
+    Route::get('patient_prescribe/index','index');
+    Route::post('patient_prescribe/create','store');
+    Route::get('patient_prescribe/{patient_prescribe}','show');
+    Route::post('patient_prescribe/{id}','update');
+    Route::delete('patient_prescribe/{patient_prescribe}','destroy');
+});
+
+Route::controller(PatientTestController::class)->group(function(){
+    Route::get('patient_test/index','index');
+    Route::post('patient_test/create','store');
+    Route::get('patient_test/{patient_test}','show');
+    Route::post('patient_test/{id}','update');
+    Route::delete('patient_test/{patient_test}','destroy');
+});
+
+Route::controller(PatientTestDetailController::class)->group(function(){
+    Route::get('patient_test_detail/index','index');
+    Route::post('patient_test_detail/create','store');
+    Route::get('patient_test_detail/{patient_test_detail}','show');
+    Route::post('patient_test_detail/{id}','update');
+    Route::delete('patient_test_detail/{patient_test_detail}','destroy');
+});
+
+Route::controller(PrescribeMediController::class)->group(function(){
+    Route::get('prescribe_medi/index','index');
+    Route::post('prescribe_medi/create','store');
+    Route::get('prescribe_medi/{prescribe_medi}','show');
+    Route::post('prescribe_medi/{id}','update');
+    Route::delete('prescribe_medi/{prescribe_medi}','destroy');
+});
+
+Route::controller(PrescriptionMediController::class)->group(function(){
+    Route::get('prescription_medi/index','index');
+    Route::post('prescription_medi/create','store');
+    Route::get('prescription_medi/{prescription_medi}','show');
+    Route::post('prescription_medi/{id}','update');
+    Route::delete('prescription_medi/{prescription_medi}','destroy');
+});
+
+Route::controller(BirthController::class)->group(function(){
+    Route::get('birth/index','index');
+    Route::post('birth/create','store');
+    Route::get('birth/{birth}','show');
+    Route::post('birth/{id}','update');
+    Route::delete('birth/{birth}','destroy');
+});
+
+Route::controller(DeathController::class)->group(function(){
+    Route::get('death/index','index');
+    Route::post('death/create','store');
+    Route::get('death/{death}','show');
+    Route::post('death/{id}','update');
+    Route::delete('death/{death}','destroy');
+});
+
+Route::controller(AppointmentRequestController::class)->group(function(){
+    Route::get('appointment_request/index','index');
+    Route::post('appointment_request/create','store');
+    Route::get('appointment_request/{appointment_request}','show');
+    Route::post('appointment_request/{id}','update');
+    Route::delete('appointment_request/{appointment_request}','destroy');
 });
 // Route::controller(DesignationController::class)->group(function(){
 //     Route::get('designation','index');
