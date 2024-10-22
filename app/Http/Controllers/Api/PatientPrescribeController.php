@@ -4,33 +4,33 @@ namespace App\Http\Controllers\Api;
 
 // use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\PatientPrescribe;
+use App\Models\Patient_Prescribe;
 use App\Http\Controllers\Api\BaseController;
 
 class PatientPrescribeController extends BaseController
 {
     public function index(){
-        $data=PatientPrescribe::get();
-        return $this->sendResponse($data,"PatientPrescribe data");
+        $data=Patient_Prescribe::get();
+        return $this->sendResponse($data,"Patient_Prescribe data");
     }
 
     public function store(Request $request){
-        $data=PatientPrescribe::create($request->all());
-        return $this->sendResponse($data,"PatientPrescribe created successfully");
+        $data=Patient_Prescribe::create($request->all());
+        return $this->sendResponse($data,"Patient_Prescribe created successfully");
     }
-    public function show(PatientPrescribe $patientprescribe){
-        return $this->sendResponse($patientprescribe,"PatientPrescribe created successfully");
+    public function show(Patient_Prescribe $patientprescribe){
+        return $this->sendResponse($patientprescribe,"Patient_Prescribe created successfully");
     }
 
     public function update(Request $request,$id){
 
-        $data=PatientPrescribe::where('id',$id)->update($request->all());
-        return $this->sendResponse($id,"PatientPrescribe updated successfully");
+        $data=Patient_Prescribe::where('id',$id)->update($request->all());
+        return $this->sendResponse($id,"Patient_Prescribe updated successfully");
     }
 
-    public function destroy(PatientPrescribe $patientprescribe)
+    public function destroy(Patient_Prescribe $patientprescribe)
     {
         $patientprescribe=$patientprescribe->delete();
-        return $this->sendResponse($patientprescribe,"PatientPrescribe deleted successfully");
+        return $this->sendResponse($patientprescribe,"Patient_Prescribe deleted successfully");
     }
 }

@@ -4,33 +4,33 @@ namespace App\Http\Controllers\Api;
 
 // use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\InvestList;
+use App\Models\Invest_List;
 use App\Http\Controllers\Api\BaseController;
 
 class InvestListController extends BaseController
 {
     public function index(){
-        $data=InvestList::get();
-        return $this->sendResponse($data,"InvestList data");
+        $data=Invest_List::get();
+        return $this->sendResponse($data,"Invest_List data");
     }
 
     public function store(Request $request){
-        $data=InvestList::create($request->all());
-        return $this->sendResponse($data,"InvestList created successfully");
+        $data=Invest_List::create($request->all());
+        return $this->sendResponse($data,"Invest_List created successfully");
     }
-    public function show(InvestList $investlist){
-        return $this->sendResponse($investlist,"InvestList created successfully");
+    public function show(Invest_List $investlist){
+        return $this->sendResponse($investlist,"Invest_List created successfully");
     }
 
     public function update(Request $request,$id){
 
-        $data=InvestList::where('id',$id)->update($request->all());
-        return $this->sendResponse($id,"InvestList updated successfully");
+        $data=Invest_List::where('id',$id)->update($request->all());
+        return $this->sendResponse($id,"Invest_List updated successfully");
     }
 
-    public function destroy(InvestList $investlist)
+    public function destroy(Invest_List $investlist)
     {
         $investlist=$investlist->delete();
-        return $this->sendResponse($investlist,"InvestList deleted successfully");
+        return $this->sendResponse($investlist,"Invest_List deleted successfully");
     }
 }

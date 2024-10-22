@@ -4,33 +4,33 @@ namespace App\Http\Controllers\Api;
 
 // use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\InvestCatagories;
+use App\Models\Invest_Cat;
 use App\Http\Controllers\Api\BaseController;
 
 class InvestCatagoriesController extends BaseController
 {
     public function index(){
-        $data=InvestCatagories::get();
-        return $this->sendResponse($data,"InvestCatagories data");
+        $data=Invest_Cat::get();
+        return $this->sendResponse($data,"Invest_Cat data");
     }
 
     public function store(Request $request){
-        $data=InvestCatagories::create($request->all());
-        return $this->sendResponse($data,"InvestCatagories created successfully");
+        $data=Invest_Cat::create($request->all());
+        return $this->sendResponse($data,"Invest_Cat created successfully");
     }
-    public function show(InvestCatagories $investcatagories){
-        return $this->sendResponse($investcatagories,"InvestCatagories created successfully");
+    public function show(Invest_Cat $investcatagories){
+        return $this->sendResponse($investcatagories,"Invest_Cat created successfully");
     }
 
     public function update(Request $request,$id){
 
-        $data=InvestCatagories::where('id',$id)->update($request->all());
-        return $this->sendResponse($id,"InvestCatagories updated successfully");
+        $data=Invest_Cat::where('id',$id)->update($request->all());
+        return $this->sendResponse($id,"Invest_Cat updated successfully");
     }
 
-    public function destroy(InvestCatagories $investcatagories)
+    public function destroy(Invest_Cat $investcatagories)
     {
         $investcatagories=$investcatagories->delete();
-        return $this->sendResponse($investcatagories,"InvestCatagories deleted successfully");
+        return $this->sendResponse($investcatagories,"Invest_Cat deleted successfully");
     }
 }

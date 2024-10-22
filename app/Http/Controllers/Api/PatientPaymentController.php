@@ -4,33 +4,33 @@ namespace App\Http\Controllers\Api;
 
 // use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\PatientPayment;
+use App\Models\Patient_Payment;
 use App\Http\Controllers\Api\BaseController;
 
 class PatientPaymentController extends BaseController
 {
     public function index(){
-        $data=PatientPayment::get();
-        return $this->sendResponse($data,"PatientPayment data");
+        $data=Patient_Payment::get();
+        return $this->sendResponse($data,"Patient_Payment data");
     }
 
     public function store(Request $request){
-        $data=PatientPayment::create($request->all());
-        return $this->sendResponse($data,"PatientPayment created successfully");
+        $data=Patient_Payment::create($request->all());
+        return $this->sendResponse($data,"Patient_Payment created successfully");
     }
-    public function show(PatientPayment $patientpayment){
-        return $this->sendResponse($patientpayment,"PatientPayment created successfully");
+    public function show(Patient_Payment $patientpayment){
+        return $this->sendResponse($patientpayment,"Patient_Payment created successfully");
     }
 
     public function update(Request $request,$id){
 
-        $data=PatientPayment::where('id',$id)->update($request->all());
-        return $this->sendResponse($id,"PatientPayment updated successfully");
+        $data=Patient_Payment::where('id',$id)->update($request->all());
+        return $this->sendResponse($id,"Patient_Payment updated successfully");
     }
 
-    public function destroy(PatientPayment $patientpayment)
+    public function destroy(Patient_Payment $patientpayment)
     {
         $patientpayment=$patientpayment->delete();
-        return $this->sendResponse($patientpayment,"PatientPayment deleted successfully");
+        return $this->sendResponse($patientpayment,"Patient_Payment deleted successfully");
     }
 }
