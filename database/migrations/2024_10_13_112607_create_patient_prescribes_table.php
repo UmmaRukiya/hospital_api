@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('patient_prescribes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('patient_id')->references('id')->on('patients');
+            $table->foreignId('patient_id')->constrained();
             $table->string('cc')->nullable();
             $table->integer('inv_list_id')->nullable();
             $table->text('advice')->nullable()->default('text');

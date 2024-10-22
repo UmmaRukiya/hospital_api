@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('patient_admits', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('patient_id')->references('id')->on('patients');
+            $table->foreignId('patient_id')->constrained();
             $table->string('father_name')->nullable();
             $table->string('mother_name')->nullable();
             $table->string('husband_name')->nullable();

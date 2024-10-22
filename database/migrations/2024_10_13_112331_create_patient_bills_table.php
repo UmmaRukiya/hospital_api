@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('patient_bills', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('patient_id')->references('id')->on('patients');
+            $table->foreignId('patient_id')->constrained();
             $table->decimal('sub_amount',10,2)->nullable();
             $table->decimal('discount',10,2)->nullable();
             $table->decimal('tax',10,2)->nullable();
