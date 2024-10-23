@@ -10,7 +10,7 @@ use App\Http\Controllers\Api\BaseController;
 class PatientController extends BaseController
 {
     public function index(){
-        $data=Patient::get();
+        $data=Patient::with('blood')->get();
         return $this->sendResponse($data,"Patient data");
     }
 

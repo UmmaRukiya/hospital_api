@@ -33,14 +33,22 @@ class EmployeController extends BaseController
         }
         $input['image']=implode(',',$files);
         /* /for files */
-        $data=Employe::create($request->all());
+
+        $data=Employe::create($input);
         return $this->sendResponse($data,"Employe created successfully");
     }
+
+    /**
+     * Display the specified resource.
+     */
     public function show(Employe $employe){
         return $this->sendResponse($employe,"Employe created successfully");
     }
-
-    public function update(Request $request,$id){
+/**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, $id)
+    {
         $input=$request->all();
         /* for files */
         $files=[];
@@ -57,11 +65,13 @@ class EmployeController extends BaseController
         unset($input['files']);
 
         /* /for files */
-
-        $employe=Employe::where('id',$id)->update($request->all());
+        $employe=Employe::where('id',$id)->update($input);
         return $this->sendResponse($employe,"Employe updated successfully");
     }
 
+    /**
+     * Remove the specified resource from storage.
+     */
     public function destroy(Employe $employe)
     {
         $employe=$employe->delete();

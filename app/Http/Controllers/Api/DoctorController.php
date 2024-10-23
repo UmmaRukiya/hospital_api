@@ -54,7 +54,7 @@ class DoctorController extends BaseController
         if($request->hasFile('files')){
             foreach($request->file('files') as $f){
                 $imagename=time().rand(1111,9999).".".$f->extension();
-                $imagePath=public_path().'/hotel';
+                $imagePath=public_path().'/employe';
                 if($f->move($imagePath,$imagename)){
                     array_push($files,$imagename);
                 }
