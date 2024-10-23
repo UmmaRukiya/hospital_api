@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Medicine_Cat;
 use App\Http\Controllers\Api\BaseController;
 
-class MedicineCatagoriesController extends BaseController
+class MedicineCategoriesController extends BaseController
 {
     public function index(){
         $data=Medicine_Cat::get();

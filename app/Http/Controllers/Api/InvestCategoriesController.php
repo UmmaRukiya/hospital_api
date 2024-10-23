@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Invest_Cat;
 use App\Http\Controllers\Api\BaseController;
 
-class InvestCatagoriesController extends BaseController
+class InvestCategoriesController extends BaseController
 {
     public function index(){
         $data=Invest_Cat::get();
@@ -18,8 +18,8 @@ class InvestCatagoriesController extends BaseController
         $data=Invest_Cat::create($request->all());
         return $this->sendResponse($data,"Invest_Cat created successfully");
     }
-    public function show(Invest_Cat $investcatagories){
-        return $this->sendResponse($investcatagories,"Invest_Cat created successfully");
+    public function show(Invest_Cat $invest_cat){
+        return $this->sendResponse($invest_cat,"Invest_Cat created successfully");
     }
 
     public function update(Request $request,$id){
@@ -28,9 +28,9 @@ class InvestCatagoriesController extends BaseController
         return $this->sendResponse($id,"Invest_Cat updated successfully");
     }
 
-    public function destroy(Invest_Cat $investcatagories)
+    public function destroy(Invest_Cat $invest_cat)
     {
-        $investcatagories=$investcatagories->delete();
-        return $this->sendResponse($investcatagories,"Invest_Cat deleted successfully");
+        $invest_cat=$invest_cat->delete();
+        return $this->sendResponse($invest_cat,"Invest_Cat deleted successfully");
     }
 }

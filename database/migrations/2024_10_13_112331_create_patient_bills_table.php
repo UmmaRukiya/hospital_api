@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('patient_id')->constrained();
             $table->decimal('sub_amount',10,2)->nullable();
             $table->decimal('discount',10,2)->nullable();
-            $table->decimal('tax',10,2)->nullable();
+            $table->decimal('tax',10,2)->comment('in %');
             $table->decimal('total_amount',10,2)->nullable();
             $table->date('bill_date')->nullable();
             $table->timestamps();

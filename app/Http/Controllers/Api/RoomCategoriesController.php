@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Room_Cat;
 use App\Http\Controllers\Api\BaseController;
 
-class RoomCatagoriesController extends BaseController
+class RoomCategoriesController extends BaseController
 {
     public function index(){
         $data=Room_Cat::get();

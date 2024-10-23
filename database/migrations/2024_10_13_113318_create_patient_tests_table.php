@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('patient_id')->constrained();
             $table->integer('admit_id')->nullable();
             $table->decimal('sub_price',6,2)->nullable();
-            $table->decimal('vat',6,2)->nullable();
+            $table->decimal('vat',6,2)->comment('in %');
             $table->decimal('discount',6,2)->nullable();
             $table->decimal('total_amount',8,2)->nullable();
             $table->decimal('paid',8,2)->nullable();

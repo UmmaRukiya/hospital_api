@@ -15,6 +15,10 @@ class Doctor extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
     public function designation()
     {
         return $this->belongsTo(Designation::class);
