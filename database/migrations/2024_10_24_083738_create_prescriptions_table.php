@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('de')->nullable();
             $table->string('advice')->nullable();
             $table->date('follow_up')->nullable();
+            $table->date('issue_date')->nullable();
             $table->timestamps();
         });
     }
