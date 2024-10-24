@@ -8,15 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Prescription extends Model
 {
     use HasFactory;
-    protected $fillable=[ 'patient_id', 'cc', 'inv', 'advice', 'visit', 'status'];
-
-    /**
-     * Get the user that owns the Prescription
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function patient()
-    {
-        return $this->belongsTo(Patient::class);
-    }
+    protected $fillable=['doctor_id', 'patient_id', 'age', 'temp', 'weight', 'bp', 'cc', 'inv', 'mh', 'de', 'advice', 'follow_up'];
 }

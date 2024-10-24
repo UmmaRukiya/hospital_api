@@ -13,12 +13,18 @@ return new class extends Migration
     {
         Schema::create('prescriptions', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('doctor_id')->constrained();
             $table->foreignId('patient_id')->constrained();
+            $table->string('age');
+            $table->string('temp')->nullable();
+            $table->string('weight')->nullable();
+            $table->string('bp')->nullable();
             $table->string('cc')->nullable();
             $table->string('inv')->nullable();
-            $table->text('advice')->nullable();
-            $table->date('visit')->nullable();
-            $table->integer('status')->nullable();
+            $table->string('mh')->nullable();
+            $table->string('de')->nullable();
+            $table->string('advice')->nullable();
+            $table->date('follow_up')->nullable();
             $table->timestamps();
         });
     }

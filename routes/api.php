@@ -27,7 +27,7 @@ use App\Http\Controllers\Api\PatientPrescribeController;
 use App\Http\Controllers\Api\PatientTestController;
 use App\Http\Controllers\Api\PatientTestDetailController;
 use App\Http\Controllers\Api\PrescribeMediController;
-use App\Http\Controllers\Api\PrescriptionMediController;
+use App\Http\Controllers\Api\PrescriptionDetailController;
 use App\Http\Controllers\Api\PrescriptionController;
 use App\Http\Controllers\Api\RoomCategoriesController;
 use App\Http\Controllers\Api\RoomListController;
@@ -248,12 +248,12 @@ Route::controller(PrescribeMediController::class)->group(function(){
     Route::delete('prescribe_medi/{prescribe_medi}','destroy');
 });
 
-Route::controller(PrescriptionMediController::class)->group(function(){
-    Route::get('prescription_medi/index','index');
-    Route::post('prescription_medi/create','store');
-    Route::get('prescription_medi/{prescription_medi}','show');
-    Route::post('prescription_medi/{id}','update');
-    Route::delete('prescription_medi/{prescription_medi}','destroy');
+Route::controller(PrescriptionDetailController::class)->group(function(){
+    Route::get('prescriptiondetail/index','index');
+    Route::post('prescriptiondetail/create','store');
+    Route::get('prescriptiondetail/{prescriptiondetail}','show');
+    Route::post('prescriptiondetail/{id}','update');
+    Route::delete('prescriptiondetail/{prescriptiondetail}','destroy');
 });
 
 Route::controller(BirthController::class)->group(function(){
