@@ -17,6 +17,7 @@ return new class extends Migration
             $table->integer('paitent_id');
             $table->string('patient_contact');
             $table->foreignId('doctor_id')->constrained();
+            $table->foreignId('department_id')->constrained();
             $table->date('app_date');
             $table->time('app_time')->nullable();
             $table->bigInteger('serial')->nullable();

@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Patient_bill_detail extends Model
+class PatientBillDetail extends Model
 {
     use HasFactory;
     protected $fillable=['patient_bill_id', 'particular', 'amount'];
@@ -15,7 +15,7 @@ class Patient_bill_detail extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function Patient(): BelongsTo
+    public function patient()
     {
         return $this->belongsTo(Patient::class);
     }

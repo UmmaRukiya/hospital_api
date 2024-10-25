@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('bloods', function (Blueprint $table) {
             $table->id();
             $table->string('blood_group');
-            $table->integer('status')->default(0)->comment('0 inactive,1 active');
+            $table->integer('status')->default(1)->comment('1 Avaiable, 0 Unvailable');
             $table->timestamps();
         });
     }

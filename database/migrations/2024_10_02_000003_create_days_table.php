@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('days', function (Blueprint $table) {
             $table->id();
             $table->string('day_name');
-            $table->integer('status')->default(0)->comment('0 inactive,1 active');
             $table->timestamps();
         });
     }

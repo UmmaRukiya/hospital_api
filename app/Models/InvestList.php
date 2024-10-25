@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Room_cat extends Model
+class InvestList extends Model
 {
     use HasFactory;
-    protected $fillable=['room_cat_name', 'status'];
+    protected $fillable=['inv_cat_id', 'invset_name', 'description', 'price', 'status'];
 }

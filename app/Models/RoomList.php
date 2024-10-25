@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Room_list extends Model
+class RoomList extends Model
 {
     use HasFactory;
     protected $fillable=['room_cat_id', 'room_no', 'floor_no', 'description', 'capacity', 'price', 'status'];
@@ -17,6 +17,6 @@ class Room_list extends Model
      */
     public function room_cat()
     {
-        return $this->belongsTo(Room_Cat::class);
+        return $this->belongsTo(RoomCat::class);
     }
 }

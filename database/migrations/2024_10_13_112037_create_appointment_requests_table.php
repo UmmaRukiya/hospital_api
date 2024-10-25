@@ -15,14 +15,15 @@ return new class extends Migration
             $table->id();
             $table->integer('department_id');
             $table->foreignId('doctor_id')->constrained();
-            $table->string('patient_name')->nullable();
+            $table->string('patient_name');
             $table->string('email', 100)->nullable();
-            $table->string('phone', 100)->nullable();
+            $table->string('contact_no', 100);
             $table->string('gender')->nullable();
+            $table->string('age');
             $table->integer('blood_id')->nullable();
-            $table->text('details')->nullable()->default('text');
+            $table->string('app_day');
             $table->date('app_date')->nullable();
-            $table->integer('status')->default(0)->comment('0 inactive,1 active');
+            $table->string('session')->nullable();
             $table->timestamps();
         });
     }

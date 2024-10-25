@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Schedule extends Model
 {
     use HasFactory;
-    protected $fillable=[ 'employe_id', 'day_id', 'shift_id', 'status'];
+    protected $fillable=[ 'employe_id', 'day_id', 'shift_id'];
 
     /**
      * Get the user that owns the Schedule

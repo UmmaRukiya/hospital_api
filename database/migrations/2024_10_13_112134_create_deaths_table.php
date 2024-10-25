@@ -17,7 +17,6 @@ return new class extends Migration
             $table->date('death_date')->nullable();
             $table->text('description')->nullable()->default('text');
             $table->foreignId('doctor_id')->constrained();
-            $table->integer('status')->default(0)->comment('0 inactive,1 active');
             $table->timestamps();
         });
     }

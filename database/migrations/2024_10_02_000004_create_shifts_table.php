@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('shift_name');
             $table->time('start_time')->nullable();
             $table->time('end_time')->nullable();
-            $table->integer('status')->default(0)->comment('0 inactive,1 active');
             $table->timestamps();
         });
     }

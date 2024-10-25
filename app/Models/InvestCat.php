@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Patient_bill extends Model
+class InvestCat extends Model
 {
     use HasFactory;
-    protected $fillable=['patient_id', 'sub_amount', 'discount', 'tax', 'total_amount', 'bill_date'];
+    protected $fillable=['invset_cat_name', 'status'];
 }

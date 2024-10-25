@@ -16,7 +16,6 @@ return new class extends Migration
             $table->integer('employe_id')->nullable();
             $table->integer('day_id')->nullable();
             $table->integer('shift_id')->nullable();
-            $table->integer('status')->nullable();
             $table->timestamps();
         });
     }

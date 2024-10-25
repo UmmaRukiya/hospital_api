@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Prescribe_medi extends Model
+class PatientTestDetail extends Model
 {
     use HasFactory;
-    protected $fillable=['prescribe_id', 'medicine_cat_id', 'medi_name', 'dose'];
+    protected $fillable=['patient_test_id', 'inv_list_id', 'amount'];
 }

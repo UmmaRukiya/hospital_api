@@ -4,33 +4,33 @@ namespace App\Http\Controllers\Api;
 
 // use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Room_List;
+use App\Models\RoomList;
 use App\Http\Controllers\Api\BaseController;
 
 class RoomListController extends BaseController
 {
     public function index(){
-        $data=Room_List::with('room_cat')->get();
-        return $this->sendResponse($data,"Room_List data");
+        $data=RoomList::with('room_cat')->get();
+        return $this->sendResponse($data,"RoomList data");
     }
 
     public function store(Request $request){
-        $data=Room_List::create($request->all());
-        return $this->sendResponse($data,"Room_List created successfully");
+        $data=RoomList::create($request->all());
+        return $this->sendResponse($data,"RoomList created successfully");
     }
-    public function show(Room_List $room_list){
-        return $this->sendResponse($room_list,"Room_List created successfully");
+    public function show(RoomList $roomlist){
+        return $this->sendResponse($roomlist,"RoomList created successfully");
     }
 
     public function update(Request $request,$id){
 
-        $data=Room_List::where('id',$id)->update($request->all());
-        return $this->sendResponse($id,"Room_List updated successfully");
+        $data=RoomList::where('id',$id)->update($request->all());
+        return $this->sendResponse($id,"RoomList updated successfully");
     }
 
-    public function destroy(Room_List $room_list)
+    public function destroy(RoomList $roomlist)
     {
-        $room_list=$room_list->delete();
-        return $this->sendResponse($room_list,"Room_List deleted successfully");
+        $roomlist=$roomlist->delete();
+        return $this->sendResponse($roomlist,"RoomList deleted successfully");
     }
 }

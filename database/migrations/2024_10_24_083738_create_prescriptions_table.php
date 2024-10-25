@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('doctor_id')->constrained();
             $table->foreignId('patient_id')->constrained();
             $table->string('age');
+            $table->string('address');
             $table->string('temp')->nullable();
             $table->string('weight')->nullable();
             $table->string('bp')->nullable();

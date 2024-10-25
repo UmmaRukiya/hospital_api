@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('cc')->nullable();
             $table->integer('inv_list_id')->nullable();
             $table->text('advice')->nullable()->default('text');
-            $table->integer('status')->nullable();
             $table->timestamps();
         });
     }

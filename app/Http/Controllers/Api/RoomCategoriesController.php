@@ -4,33 +4,33 @@ namespace App\Http\Controllers\Api;
 
 // use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Room_Cat;
+use App\Models\RoomCat;
 use App\Http\Controllers\Api\BaseController;
 
 class RoomCategoriesController extends BaseController
 {
     public function index(){
-        $data=Room_Cat::get();
-        return $this->sendResponse($data,"Room_Cat data");
+        $data=RoomCat::get();
+        return $this->sendResponse($data,"RoomCat data");
     }
 
     public function store(Request $request){
-        $data=Room_Cat::create($request->all());
-        return $this->sendResponse($data,"Room_Cat created successfully");
+        $data=RoomCat::create($request->all());
+        return $this->sendResponse($data,"RoomCat created successfully");
     }
-    public function show(Room_Cat $room_cat){
-        return $this->sendResponse($room_cat,"Room_Cat created successfully");
+    public function show(RoomCat $roomcat){
+        return $this->sendResponse($roomcat,"RoomCat created successfully");
     }
 
     public function update(Request $request,$id){
 
-        $data=Room_Cat::where('id',$id)->update($request->all());
-        return $this->sendResponse($id,"Room_Cat updated successfully");
+        $data=RoomCat::where('id',$id)->update($request->all());
+        return $this->sendResponse($id,"RoomCat updated successfully");
     }
 
-    public function destroy(Room_Cat $room_cat)
+    public function destroy(RoomCat $roomcat)
     {
-        $room_cat=$room_cat->delete();
-        return $this->sendResponse($room_cat,"Room_Cat deleted successfully");
+        $roomcat=$roomcat->delete();
+        return $this->sendResponse($roomcat,"RoomCat deleted successfully");
     }
 }

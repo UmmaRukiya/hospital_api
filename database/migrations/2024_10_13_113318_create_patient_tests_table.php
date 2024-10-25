@@ -20,7 +20,6 @@ return new class extends Migration
             $table->decimal('discount',6,2)->nullable();
             $table->decimal('total_amount',8,2)->nullable();
             $table->decimal('paid',8,2)->nullable();
-            $table->integer('status')->nullable();
             $table->timestamps();
         });
     }
