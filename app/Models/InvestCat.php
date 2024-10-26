@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class InvestCat extends Model
 {
     use HasFactory;
-    protected $fillable=['invset_cat_name', 'status'];
+    protected $fillable=['invest_cat_name', 'status'];
 }

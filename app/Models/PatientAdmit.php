@@ -15,8 +15,16 @@ class PatientAdmit extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function Patient(): BelongsTo
+    public function patient()
     {
         return $this->belongsTo(Patient::class);
+    }
+    public function doctor()
+    {
+        return $this->belongsTo(Doctor::class);
+    }
+    public function roomlist()
+    {
+        return $this->belongsTo(RoomList::class);
     }
 }

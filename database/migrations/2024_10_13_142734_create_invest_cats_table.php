@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('invest_cats', function (Blueprint $table) {
             $table->id();
-            $table->string('invset_cat_name')->nullable();
+            $table->string('invest_cat_name')->nullable();
             $table->integer('status')->default(1)->comment('0 Unavailable,1 Available');
             $table->timestamps();
         });
