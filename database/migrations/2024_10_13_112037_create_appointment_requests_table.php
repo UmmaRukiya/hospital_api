@@ -21,9 +21,7 @@ return new class extends Migration
             $table->string('gender')->nullable();
             $table->string('age');
             $table->integer('blood_id')->nullable();
-            $table->string('app_day');
             $table->date('app_date')->nullable();
-            $table->string('session')->nullable();
             $table->timestamps();
         });
     }

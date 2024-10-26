@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('room_cat_id')->nullable();
             $table->integer('room_no')->nullable();
+            $table->integer('department_id')->nullable();
             $table->integer('floor_no')->nullable();
             $table->text('description')->nullable()->default('text');
             $table->integer('status')->default(0)->comment('0 Unavailable,1 Available');

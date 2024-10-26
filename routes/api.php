@@ -19,19 +19,21 @@ use App\Http\Controllers\Api\AppointmentRequestController;
 use App\Http\Controllers\Api\AppointmentController;
 use App\Http\Controllers\Api\InvestCategoriesController;
 use App\Http\Controllers\Api\InvestListController;
-use App\Http\Controllers\Api\MedicineCategoriesController;
+use App\Http\Controllers\Api\MedicineCatController;
 use App\Http\Controllers\Api\PatientAdmitController;
 use App\Http\Controllers\Api\PatientBillDetailController;
 use App\Http\Controllers\Api\PatientPaymentController;
-use App\Http\Controllers\Api\PatientPrescribeController;
+// use App\Http\Controllers\Api\PatientPrescribeController;
 use App\Http\Controllers\Api\PatientTestController;
 use App\Http\Controllers\Api\PatientTestDetailController;
-use App\Http\Controllers\Api\PrescribeMediController;
+use App\Http\Controllers\Api\MedicineController;
 use App\Http\Controllers\Api\PrescriptionDetailController;
 use App\Http\Controllers\Api\PrescriptionController;
 use App\Http\Controllers\Api\RoomCategoriesController;
 use App\Http\Controllers\Api\RoomListController;
 use App\Http\Controllers\Api\RoleController;
+use App\Models\Medicine;
+
 // use App\Http\Controllers\Api\DesignationController;
 /*
 |--------------------------------------------------------------------------
@@ -184,12 +186,12 @@ Route::controller(InvestListController::class)->group(function(){
     Route::delete('invest_list/{invest_list}','destroy');
 });
 
-Route::controller(MedicineCategoriesController::class)->group(function(){
-    Route::get('medicine_cat/index','index');
-    Route::post('medicine_cat/create','store');
-    Route::get('medicine_cat/{medicine_cat}','show');
-    Route::post('medicine_cat/{id}','update');
-    Route::delete('medicine_cat/{medicine_cat}','destroy');
+Route::controller(MedicineCatController::class)->group(function(){
+    Route::get('medicinecat/index','index');
+    Route::post('medicinecat/create','store');
+    Route::get('medicinecat/{medicinecat}','show');
+    Route::post('medicinecat/{id}','update');
+    Route::delete('medicinecat/{medicinecat}','destroy');
 });
 
 Route::controller(PatientAdmitController::class)->group(function(){
@@ -216,13 +218,13 @@ Route::controller(PatientPaymentController::class)->group(function(){
     Route::delete('patient_payment/{patient_payment}','destroy');
 });
 
-Route::controller(PatientPrescribeController::class)->group(function(){
-    Route::get('patient_prescribe/index','index');
-    Route::post('patient_prescribe/create','store');
-    Route::get('patient_prescribe/{patient_prescribe}','show');
-    Route::post('patient_prescribe/{id}','update');
-    Route::delete('patient_prescribe/{patient_prescribe}','destroy');
-});
+// Route::controller(MedicineController::class)->group(function(){
+//     Route::get('medicine/index','index');
+//     Route::post('medicine/create','store');
+//     Route::get('medicine/{medicine}','show');
+//     Route::post('medicine/{id}','update');
+//     Route::delete('medicine/{medicine}','destroy');
+// });
 
 Route::controller(PatientTestController::class)->group(function(){
     Route::get('patient_test/index','index');
@@ -240,13 +242,13 @@ Route::controller(PatientTestDetailController::class)->group(function(){
     Route::delete('patient_test_detail/{patient_test_detail}','destroy');
 });
 
-Route::controller(PrescribeMediController::class)->group(function(){
-    Route::get('prescribe_medi/index','index');
-    Route::post('prescribe_medi/create','store');
-    Route::get('prescribe_medi/{prescribe_medi}','show');
-    Route::post('prescribe_medi/{id}','update');
-    Route::delete('prescribe_medi/{prescribe_medi}','destroy');
-});
+// Route::controller(PrescribeMediController::class)->group(function(){
+//     Route::get('prescribe_medi/index','index');
+//     Route::post('prescribe_medi/create','store');
+//     Route::get('prescribe_medi/{prescribe_medi}','show');
+//     Route::post('prescribe_medi/{id}','update');
+//     Route::delete('prescribe_medi/{prescribe_medi}','destroy');
+// });
 
 Route::controller(PrescriptionDetailController::class)->group(function(){
     Route::get('prescriptiondetail/index','index');

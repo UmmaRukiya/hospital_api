@@ -11,7 +11,7 @@ use App\Models\Patient;
 class AppointmentController extends BaseController
 {
     public function index(){
-        $data=Appointment::with('doctor')->get();
+        $data=Appointment::with('doctor','department')->get();
         return $this->sendResponse($data,"Appointment data");
     }
 
