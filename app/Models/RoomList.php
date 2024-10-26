@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class RoomList extends Model
 {
     use HasFactory;
-    protected $fillable=['room_cat_id', 'room_no', 'floor_no', 'description', 'capacity', 'price', 'status'];
+    protected $fillable=['room_cat_id', 'room_no', 'floor_no', 'description', 'status'];
 
     /**
      * Get the room_cat that owns the Room_list

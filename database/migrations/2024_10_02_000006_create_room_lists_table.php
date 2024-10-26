@@ -17,9 +17,7 @@ return new class extends Migration
             $table->integer('room_no')->nullable();
             $table->integer('floor_no')->nullable();
             $table->text('description')->nullable()->default('text');
-            $table->string('capacity')->nullable();
-            $table->decimal('price', 8, 2)->nullable();
-            $table->integer('status')->default(0)->comment('0 inactive,1 active');
+            $table->integer('status')->default(0)->comment('0 Unavailable,1 Available');
             $table->timestamps();
         });
     }

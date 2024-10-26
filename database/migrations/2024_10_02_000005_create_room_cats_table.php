@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('room_cats', function (Blueprint $table) {
             $table->id();
             $table->string('room_cat_name');
-            $table->integer('status')->default(0)->comment('0 inactive,1 active');
+            $table->text('description')->nullable();
+            $table->decimal('price', 10,2);
             $table->timestamps();
         });
     }

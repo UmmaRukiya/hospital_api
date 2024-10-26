@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class RoomCat extends Model
 {
     use HasFactory;
-    protected $fillable=['room_cat_name', 'status'];
+    protected $fillable=['room_cat_name', 'description', 'price'];
 }
