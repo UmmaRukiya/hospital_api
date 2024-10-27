@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class PatientAdmit extends Model
 {
     use HasFactory;
-    protected $fillable=['patient_id', 'father_name', 'mother_name', 'husband_name', 'marital_status', 'doctor_id', 'problem', 'admit_date', 'release_date', 'room_id', 'guardian', 'relation', 'condition'];
+    protected $fillable=['patient_id', 'doctor_id', 'problem', 'admit_date', 'release_date', 'room_id', 'guardian', 'relation', 'condition'];
 
     /**
      * Get the Patient that owns the Patient_admit
