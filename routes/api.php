@@ -143,16 +143,16 @@ Route::controller(ShiftController::class)->group(function(){
 Route::controller(RoomCategoriesController::class)->group(function(){
     Route::get('roomcat/index','index');
     Route::post('roomcat/create','store');
-    Route::get('roomcat/{room_cat}','show');
+    Route::get('roomcat/{roomcat}','show');
     Route::post('roomcat/{id}','update');
-    Route::delete('roomcat/{room_cat}','destroy');
+    Route::delete('roomcat/{roomcat}','destroy');
 });
 Route::controller(RoomListController::class)->group(function(){
     Route::get('roomlist/index','index');
     Route::post('roomlist/create','store');
-    Route::get('roomlist/{room_list}','show');
+    Route::get('roomlist/{roomlist}','show');
     Route::post('roomlist/{id}','update');
-    Route::delete('roomlist/{room_list}','destroy');
+    Route::delete('roomlist/{roomlist}','destroy');
 });
 Route::controller(AppointmentController::class)->group(function(){
     Route::get('appointment/index','index');
@@ -166,7 +166,7 @@ Route::controller(PrescriptionController::class)->group(function(){
     Route::get('prescription/index','index');
     Route::post('prescription/create','store');
     Route::get('prescription/{prescription}','show');
-    Route::post('prescription/{id}','update');
+    Route::post('prescription/edit/{id}','update');
     Route::delete('prescription/{prescription}','destroy');
 });
 
@@ -197,17 +197,17 @@ Route::controller(MedicineCatController::class)->group(function(){
 Route::controller(PatientAdmitController::class)->group(function(){
     Route::get('patientadmit/index','index');
     Route::post('patientadmit/create','store');
-    Route::get('patientadmit/{patient_admit}','show');
+    Route::get('patientadmit/{patientadmit}','show');
     Route::post('patientadmit/{id}','update');
-    Route::delete('patientadmit/{patient_admit}','destroy');
+    Route::delete('patientadmit/{patientadmit}','destroy');
 });
 
 Route::controller(PatientBillDetailController::class)->group(function(){
-    Route::get('patient_bill_detail/index','index');
-    Route::post('patient_bill_detail/create','store');
-    Route::get('patient_bill_detail/{patient_bill_detail}','show');
-    Route::post('patient_bill_detail/{id}','update');
-    Route::delete('patient_bill_detail/{patient_bill_detail}','destroy');
+    Route::get('patientbilldetail/index','index');
+    Route::post('patientbilldetail/create','store');
+    Route::get('patientbilldetail/{patientbilldetail}','show');
+    Route::post('patientbilldetail/{id}','update');
+    Route::delete('patientbilldetail/{patientbilldetail}','destroy');
 });
 
 Route::controller(PatientPaymentController::class)->group(function(){
@@ -250,13 +250,6 @@ Route::controller(PatientTestDetailController::class)->group(function(){
 //     Route::delete('prescribe_medi/{prescribe_medi}','destroy');
 // });
 
-Route::controller(PrescriptionDetailController::class)->group(function(){
-    Route::get('prescriptiondetail/index','index');
-    Route::post('prescriptiondetail/create','store');
-    Route::get('prescriptiondetail/{prescriptiondetail}','show');
-    Route::post('prescriptiondetail/{id}','update');
-    Route::delete('prescriptiondetail/{prescriptiondetail}','destroy');
-});
 
 Route::controller(BirthController::class)->group(function(){
     Route::get('birth/index','index');

@@ -4,33 +4,33 @@ namespace App\Http\Controllers\Api;
 
 // use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Patient_Bill_Detail;
+use App\Models\PatientBillDetail;
 use App\Http\Controllers\Api\BaseController;
 
 class PatientBillDetailController extends BaseController
 {
     public function index(){
-        $data=Patient_Bill_Detail::get();
-        return $this->sendResponse($data,"Patient_Bill_Detail data");
+        $data=PatientBillDetail::get();
+        return $this->sendResponse($data,"PatientBillDetail data");
     }
 
     public function store(Request $request){
-        $data=Patient_Bill_Detail::create($request->all());
-        return $this->sendResponse($data,"Patient_Bill_Detail created successfully");
+        $data=PatientBillDetail::create($request->all());
+        return $this->sendResponse($data,"PatientBillDetail created successfully");
     }
-    public function show(Patient_Bill_Detail $patientbilldetail){
-        return $this->sendResponse($patientbilldetail,"Patient_Bill_Detail created successfully");
+    public function show(PatientBillDetail $patientbilldetail){
+        return $this->sendResponse($patientbilldetail,"PatientBillDetail created successfully");
     }
 
     public function update(Request $request,$id){
 
-        $data=Patient_Bill_Detail::where('id',$id)->update($request->all());
-        return $this->sendResponse($id,"Patient_Bill_Detail updated successfully");
+        $data=PatientBillDetail::where('id',$id)->update($request->all());
+        return $this->sendResponse($id,"PatientBillDetail updated successfully");
     }
 
-    public function destroy(Patient_Bill_Detail $patientbilldetail)
+    public function destroy(PatientBillDetail $patientbilldetail)
     {
         $patientbilldetail=$patientbilldetail->delete();
-        return $this->sendResponse($patientbilldetail,"Patient_Bill_Detail deleted successfully");
+        return $this->sendResponse($patientbilldetail,"PatientBillDetail deleted successfully");
     }
 }

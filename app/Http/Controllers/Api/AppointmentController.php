@@ -32,7 +32,8 @@ class AppointmentController extends BaseController
         }
         return $this->sendResponse($data,"Appointment created successfully");
     }
-    public function show(Appointment $appointment){
+    public function show( $id){
+        $appointment=Appointment::with('patient')->where('id',$id)->first();
         return $this->sendResponse($appointment,"Appointment created successfully");
     }
 

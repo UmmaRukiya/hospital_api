@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api;
 
 // use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Appointment_Request;
+use App\Models\AppointmentRequest;
 use App\Http\Controllers\Api\BaseController;
 
 class AppointmentRequestController extends BaseController

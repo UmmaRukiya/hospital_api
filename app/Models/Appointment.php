@@ -23,4 +23,8 @@ class Appointment extends Model
     {
         return $this->belongsTo(Department::class);
     }
+    public function patient()
+    {
+        return $this->belongsTo(Patient::class,'paitent_id');
+    }
 }
