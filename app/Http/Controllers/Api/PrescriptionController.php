@@ -27,6 +27,9 @@ class PrescriptionController extends BaseController
         $pres['mh']=$request->pres['mh'];
         $pres['patient_id']=$request->pres['patient_id'];
         $pres['doctor_id']=$request->pres['doctor_id'];
+        $pres['advice']=$request->pres['advice'];
+        $pres['follow_up']=$request->pres['follow_up'];
+        $pres['issue_date']=$request->pres['issue_date'];
         $data=Prescription::create($pres);
         /* update address */
         Patient::where('id',$request->pres['patient_id'])->update(['present_address'=>$request->pres['address']]);
@@ -60,6 +63,9 @@ class PrescriptionController extends BaseController
         $pres['mh']=$request->pres['mh'];
         $pres['patient_id']=$request->pres['patient_id'];
         $pres['doctor_id']=$request->pres['doctor_id'];
+        $pres['advice']=$request->pres['advice'];
+        $pres['follow_up']=$request->pres['follow_up'];
+        $pres['issue_date']=$request->pres['issue_date'];
         $data=Prescription::where('id',$id)->update($pres);
         /* update address */
         Patient::where('id',$request->pres['patient_id'])->update(['present_address'=>$request->pres['address']]);

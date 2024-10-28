@@ -17,6 +17,6 @@ class InvestList extends Model
      */
     public function investcat()
     {
-        return $this->belongsTo(InvestCat::class);
+        return $this->belongsTo(InvestCat::class, 'inv_cat_id');
     }
 }

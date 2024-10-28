@@ -25,6 +25,6 @@ class PatientAdmit extends Model
     }
     public function roomlist()
     {
-        return $this->belongsTo(RoomList::class);
+        return $this->belongsTo(RoomList::class, 'room_id');
     }
 }

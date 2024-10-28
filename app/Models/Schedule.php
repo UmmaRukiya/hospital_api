@@ -17,14 +17,14 @@ class Schedule extends Model
      */
     public function employe()
     {
-        return $this->belongsTo(Employe::class);
+        return $this->belongsTo(Employe::class, 'employe_id');
     }
     public function day()
     {
-        return $this->belongsTo(Day::class);
+        return $this->belongsTo(Day::class, 'day_id');
     }
     public function shift()
     {
-        return $this->belongsTo(Shift::class);
+        return $this->belongsTo(Shift::class, 'shift_id');
     }
 }

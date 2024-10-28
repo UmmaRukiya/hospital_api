@@ -17,6 +17,6 @@ class Medicine extends Model
      */
     public function medicinecat()
     {
-        return $this->belongsTo(MedicineCat::class);
+        return $this->belongsTo(MedicineCat::class, 'medicine_cat_id' );
     }
 }
