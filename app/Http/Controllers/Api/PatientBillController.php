@@ -15,34 +15,32 @@ class PatientBillController extends BaseController
         return $this->sendResponse($data,"PatientBill data");
     }
 
-    public function store(Request $request){
-         //return $request->all();
-        
-         $patientbill_data['patient_id']=$request->input['patient_id'];
-         $patientbill_data['bill_date']=$request->input['bill_date'];
-         $patientbill_data['sub_amount']=$request->totalData['sub_amount'];
-         $patientbill_data['discount']=$request->totalData['discount'];
-         $patientbill_data['tax']=$request->totalData['tax'];
-         $patientbill_data['total_amount']=$request->totalData['finalTotal'];
-        //  $purchase_data['discountamt']=$request->totalData['discountAmt']?? 0;
-        //  $purchase_data['taxamt']=$request->totalData['taxAmt']?? 0;
-         $data=PatientBill::create($patientbill_data);
-         foreach($request->cartitems as $itms){
-             $item['patient_bill_id']=$data->id;
-             $item['roomlist_id']=$itms['id'];
-             $item['unit']=$itms['unit'];
-             $item['price']=$itms['price'];
-            //  BillItem::create($item);
-            //  $stock['purchase_id']=$data->id;
-            //  $stock['product_id']=$itms['id'];
-             //$stock['qty']="-".$itms['quantity']; //use for sales
-            //  $stock['qty']=$itms['quantity'];
-            //  $stock['price']=$itms['price'];
-            //  Stock::create($stock);
-         }
-        // $data=PatientBill::create($request->all());
-        return $this->sendResponse($data,"PatientBill created successfully");
+    // public function store(Request $request){
+        // In your PatientBillController.php
+
+public function store(Request $request) {
+    $request->validate([
+        'input.patient_id' => 'required|exists:patients,id',
+        'input.bill_date' => 'required|date',
+        'cartItems' => 'required|array',
+        'cartItems.*.particulars' => 'required|string',
+        'cartItems.*.unit' => 'required|integer|min:1',
+        'cartItems.*.price' => 'required|numeric',
+    ]);
+
+    $bill = PatientBill::create($request->input('input'));
+    foreach ($request->input('cartItems') as $item) {
+        $bill->details()->create([
+            'particular' => $item['particulars'],
+            'amount' => $item['price'],
+            'unit' => $item['unit'],
+        ]);
     }
+    return response()->json(['message' => 'Bill created successfully'], 201);
+}
+
+    //     return $this->sendResponse($data,"PatientBill created successfully");
+    // }
     public function show(PatientBill $patientbill){
         return $this->sendResponse($patientbill,"PatientBill created successfully");
     }

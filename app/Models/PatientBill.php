@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class PatientBill extends Model
 {
@@ -18,5 +19,11 @@ class PatientBill extends Model
     public function patient(): BelongsTo
     {
         return $this->belongsTo(Patient::class);
+    }
+
+    // Define the relationship to the PatientBillDetail model
+    public function details()
+    {
+        return $this->hasMany(PatientBillDetail::class);
     }
 }

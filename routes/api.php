@@ -21,9 +21,10 @@ use App\Http\Controllers\Api\InvestCategoriesController;
 use App\Http\Controllers\Api\InvestListController;
 use App\Http\Controllers\Api\MedicineCatController;
 use App\Http\Controllers\Api\PatientAdmitController;
-use App\Http\Controllers\Api\PatientBillDetailController;
+// use App\Http\Controllers\Api\PatientBillDetailController;
+use App\Http\Controllers\Api\PatientBillController;
 use App\Http\Controllers\Api\PatientPaymentController;
-// use App\Http\Controllers\Api\PatientPrescribeController;
+
 use App\Http\Controllers\Api\PatientTestController;
 use App\Http\Controllers\Api\PatientTestDetailController;
 use App\Http\Controllers\Api\MedicineController;
@@ -202,12 +203,12 @@ Route::controller(PatientAdmitController::class)->group(function(){
     Route::delete('patientadmit/{patientadmit}','destroy');
 });
 
-Route::controller(PatientBillDetailController::class)->group(function(){
-    Route::get('patientbilldetail/index','index');
-    Route::post('patientbilldetail/create','store');
-    Route::get('patientbilldetail/{patientbilldetail}','show');
-    Route::post('patientbilldetail/{id}','update');
-    Route::delete('patientbilldetail/{patientbilldetail}','destroy');
+Route::controller(PatientBillController::class)->group(function(){
+    Route::get('patientbill/index','index');
+    Route::post('patientbill/create','store');
+    Route::get('patientbill/{patientbill}','show');
+    Route::post('patientbill/{id}','update');
+    Route::delete('patientbill/{patientbill}','destroy');
 });
 
 Route::controller(PatientPaymentController::class)->group(function(){
@@ -242,13 +243,6 @@ Route::controller(PatientTestDetailController::class)->group(function(){
     Route::delete('patient_test_detail/{patient_test_detail}','destroy');
 });
 
-// Route::controller(PrescribeMediController::class)->group(function(){
-//     Route::get('prescribe_medi/index','index');
-//     Route::post('prescribe_medi/create','store');
-//     Route::get('prescribe_medi/{prescribe_medi}','show');
-//     Route::post('prescribe_medi/{id}','update');
-//     Route::delete('prescribe_medi/{prescribe_medi}','destroy');
-// });
 
 
 Route::controller(BirthController::class)->group(function(){

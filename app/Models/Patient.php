@@ -19,4 +19,9 @@ class Patient extends Model
     {
         return $this->belongsTo(Blood::class);
     }
+
+    public function bills(): HasMany
+    {
+        return $this->hasMany(PatientBill::class);
+    }
 }

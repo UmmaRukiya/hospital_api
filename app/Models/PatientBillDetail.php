@@ -19,4 +19,8 @@ class PatientBillDetail extends Model
     {
         return $this->belongsTo(Patient::class);
     }
+    public function patientbill()
+    {
+        return $this->belongsTo(PatientBill::class);
+    }
 }
