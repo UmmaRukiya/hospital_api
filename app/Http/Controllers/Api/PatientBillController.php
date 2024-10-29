@@ -15,8 +15,6 @@ class PatientBillController extends BaseController
         return $this->sendResponse($data,"PatientBill data");
     }
 
-    // public function store(Request $request){
-        // In your PatientBillController.php
 
 public function store(Request $request) {
     $request->validate([
@@ -39,8 +37,6 @@ public function store(Request $request) {
     return response()->json(['message' => 'Bill created successfully'], 201);
 }
 
-    //     return $this->sendResponse($data,"PatientBill created successfully");
-    // }
     public function show(PatientBill $patientbill){
         return $this->sendResponse($patientbill,"PatientBill created successfully");
     }

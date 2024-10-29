@@ -26,7 +26,7 @@ use App\Http\Controllers\Api\PatientBillController;
 use App\Http\Controllers\Api\PatientPaymentController;
 
 use App\Http\Controllers\Api\PatientTestController;
-use App\Http\Controllers\Api\PatientTestDetailController;
+// use App\Http\Controllers\Api\PatientTestDetailController;
 use App\Http\Controllers\Api\MedicineController;
 use App\Http\Controllers\Api\PrescriptionDetailController;
 use App\Http\Controllers\Api\PrescriptionController;
@@ -228,20 +228,20 @@ Route::controller(MedicineController::class)->group(function(){
 });
 
 Route::controller(PatientTestController::class)->group(function(){
-    Route::get('patient_test/index','index');
-    Route::post('patient_test/create','store');
-    Route::get('patient_test/{patient_test}','show');
-    Route::post('patient_test/{id}','update');
-    Route::delete('patient_test/{patient_test}','destroy');
+    Route::get('patienttest/index','index');
+    Route::post('patienttest/create','store');
+    Route::get('patienttest/{patienttest}','show');
+    Route::post('patienttest/{id}','update');
+    Route::delete('patienttest/{patienttest}','destroy');
 });
 
-Route::controller(PatientTestDetailController::class)->group(function(){
-    Route::get('patient_test_detail/index','index');
-    Route::post('patient_test_detail/create','store');
-    Route::get('patient_test_detail/{patient_test_detail}','show');
-    Route::post('patient_test_detail/{id}','update');
-    Route::delete('patient_test_detail/{patient_test_detail}','destroy');
-});
+// Route::controller(PatientTestDetailController::class)->group(function(){
+//     Route::get('patient_test_detail/index','index');
+//     Route::post('patient_test_detail/create','store');
+//     Route::get('patient_test_detail/{patient_test_detail}','show');
+//     Route::post('patient_test_detail/{id}','update');
+//     Route::delete('patient_test_detail/{patient_test_detail}','destroy');
+// });
 
 
 
