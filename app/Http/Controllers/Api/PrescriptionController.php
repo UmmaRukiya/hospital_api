@@ -12,7 +12,7 @@ use App\Models\Patient;
 class PrescriptionController extends BaseController
 {
     public function index(){
-        $data=Prescription::with('patient','details')->get();
+        $data=Prescription::with('patient','doctor','details','details.medicine')->get();
         return $this->sendResponse($data,"Prescription data");
     }
 
