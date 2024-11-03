@@ -27,4 +27,14 @@ class PatientAdmit extends Model
     {
         return $this->belongsTo(RoomList::class, 'room_id');
     }
+
+    /**
+     * Get all of the comments for the PatientAdmit
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function bill()
+    {
+        return $this->hasMany(PatientBill::class, 'patient_id');
+    }
 }
