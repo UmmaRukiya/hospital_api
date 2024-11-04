@@ -13,7 +13,7 @@ use App\Http\Controllers\Api\BaseController;
 class PatientBillController extends BaseController
 {
     public function index(){
-        $data=PatientBill::with('patient','details')->get();
+        $data=PatientBill::with('patient','details','bill')->get();
         return $this->sendResponse($data,"PatientBill data");
     }
 

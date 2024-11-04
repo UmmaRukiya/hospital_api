@@ -23,4 +23,14 @@ class Employe extends Model
     {
         return $this->belongsTo(Blood::class);
     }
+
+    /**
+     * Get all of the comments for the Employe
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function schedule()
+    {
+        return $this->hasMany(Schedule::class);
+    }
 }
