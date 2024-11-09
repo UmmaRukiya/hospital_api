@@ -27,6 +27,6 @@ class PatientTest extends Model
     // Define the relationship to the PatientTestDetail model
     public function details()
     {
-        return $this->hasMany(PatientTestDetail::class);
+        return $this->hasMany(PatientTestDetail::class)->with('investlist');
     }
 }

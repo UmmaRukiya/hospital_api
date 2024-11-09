@@ -18,24 +18,21 @@ class PatientTestController extends BaseController
     public function store(Request $request) {
         $request->validate([
             'input.patient_id' => 'required|exists:patients,id',
-            'input.admit_id' => 'required|integer',
             'cartItems' => 'required|array',
-            'cartItems.*.investigations' => 'required|string',
-            'cartItems.*.unit' => 'required|integer|min:1',
+            'cartItems.*.id' => 'required',
             'cartItems.*.price' => 'required|numeric',
         ]);
-    
+
         $bill = PatientTest::create($request->input('input'));
         foreach ($request->input('cartItems') as $item) {
             $bill->details()->create([
-                'investigation' => $item['investigations'],
-                'amount' => $item['price'],
-                'unit' => $item['unit'],
+                'inv_list_id' => $item['id'],
+                'amount' => $item['price']
             ]);
         }
         return response()->json(['message' => 'PatientTest created successfully'], 201);
     }
-    
+
     public function show(PatientTest $patienttest){
         return $this->sendResponse($patienttest,"PatientTest created successfully");
     }

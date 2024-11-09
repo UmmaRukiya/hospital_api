@@ -25,7 +25,7 @@ class PatientAdmit extends Model
     }
     public function roomlist()
     {
-        return $this->belongsTo(RoomList::class, 'room_id');
+        return $this->belongsTo(RoomList::class, 'room_id')->with('room_cat');
     }
 
     /**
@@ -36,5 +36,9 @@ class PatientAdmit extends Model
     public function bill()
     {
         return $this->hasMany(PatientBill::class, 'patient_id');
+    }
+    public function test()
+    {
+        return $this->hasMany(PatientTest::class, 'admit_id')->with('details');
     }
 }

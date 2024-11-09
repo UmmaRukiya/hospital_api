@@ -33,4 +33,10 @@ class PatientAdmitController extends BaseController
         $patientadmit=$patientadmit->delete();
         return $this->sendResponse($patientadmit,"PatientAdmit deleted successfully");
     }
+    public function billdetails( $id)
+    {
+        $data=PatientAdmit::with('test','patient','roomlist')->where('id',$id)->first();
+        return $this->sendResponse($data,"PatientAdmit deleted successfully");
+    }
+
 }

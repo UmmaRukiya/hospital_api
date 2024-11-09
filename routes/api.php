@@ -82,7 +82,7 @@ Route::controller(NurseController::class)->group(function(){
     Route::get('nurse/{nurse}','show');
     Route::post('nurse/{id}','update');
     Route::delete('nurse/{nurse}','destroy');
-    
+
 });
 
 Route::controller(EmployeController::class)->group(function(){
@@ -197,6 +197,7 @@ Route::controller(MedicineCatController::class)->group(function(){
 
 Route::controller(PatientAdmitController::class)->group(function(){
     Route::get('patientadmit/index','index');
+    Route::get('patientadmit/billdetails/{id}','billdetails');
     Route::post('patientadmit/create','store');
     Route::get('patientadmit/{patientadmit}','show');
     Route::post('patientadmit/{id}','update');
