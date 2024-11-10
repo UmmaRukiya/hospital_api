@@ -213,11 +213,11 @@ Route::controller(PatientBillController::class)->group(function(){
 });
 
 Route::controller(PatientPaymentController::class)->group(function(){
-    Route::get('patient_payment/index','index');
-    Route::post('patient_payment/create','store');
-    Route::get('patient_payment/{patient_payment}','show');
-    Route::post('patient_payment/{id}','update');
-    Route::delete('patient_payment/{patient_payment}','destroy');
+    Route::get('patientpayment/index','index');
+    Route::post('patientpayment/create','store');
+    Route::get('patientpayment/{patientpayment}','show');
+    Route::post('patientpayment/{id}','update');
+    Route::delete('patientpayment/{patientpayment}','destroy');
 });
 
 Route::controller(MedicineController::class)->group(function(){
