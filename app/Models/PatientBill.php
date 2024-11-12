@@ -24,6 +24,6 @@ class PatientBill extends Model
     // Define the relationship to the PatientBillDetail model
     public function details()
     {
-        return $this->hasMany(PatientBillDetail::class);
+        return $this->hasMany(PatientBillDetail::class, 'patient_bill_id');
     }
 }

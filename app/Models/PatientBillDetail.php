@@ -21,6 +21,7 @@ class PatientBillDetail extends Model
     }
     // public function patientbill()
     // {
-    //     return $this->belongsTo(PatientBill::class);
+    //     return $this->belongsTo(PatientBill::class,'patient_bill_id');
     // }
+    
 }

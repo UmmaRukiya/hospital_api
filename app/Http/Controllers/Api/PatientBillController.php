@@ -13,19 +13,20 @@ use App\Http\Controllers\Api\BaseController;
 class PatientBillController extends BaseController
 {
     public function index(){
-        $data=PatientBill::with('patient','details','bill')->get();
+        $data=PatientBill::with('patient','details')->get();
         return $this->sendResponse($data,"PatientBill data");
     }
 
 
 public function store(Request $request){
     $input['patient_id']=$request->input['patient_id'];
+    $input['admit_id']=$request->input['admit_id'];
     $input['bill_date']=$request->input['bill_date'];
     $input['sub_amount']=$request->input['sub_amount'];
     $input['discount']=$request->input['discount'];
     $input['tax']=$request->input['tax'];
     $input['total_amount']=$request->input['total_amount'];
-    $input['pay']=$request->input['pay'];
+    $input['pay']=$request->input['paid'];
     $data=PatientBill::create($input);
 
     if($data){
