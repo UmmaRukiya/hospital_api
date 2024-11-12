@@ -11,6 +11,6 @@ class PatientTestDetail extends Model
     protected $fillable=['patient_test_id', 'inv_list_id', 'amount'];
     public function investlist()
     {
-        return $this->belongsTo(InvestList::class,'patient_test_id');
+        return $this->belongsTo(InvestList::class,'inv_list_id');
     }
 }
