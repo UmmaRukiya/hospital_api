@@ -39,21 +39,22 @@ class PatientBillController extends BaseController
 //     return response()->json(['message' => 'Bill created successfully'], 201);
 // }
 public function store(Request $request){
-    $bill['patient_id']=$request->bill['patient_id'];
-    $bill['bill_date']=$request->bill['bill_date'];
-    $bill['sub_amount']=$request->bill['sub_amount'];
-    $bill['discount']=$request->bill['discount'];
-    $bill['tax']=$request->bill['tax'];
-    $bill['total_amount']=$request->bill['total_amount'];
-    $data=PatientBill::create($bill);
+    $input['patient_id']=$request->input['patient_id'];
+    $input['bill_date']=$request->input['bill_date'];
+    $input['sub_amount']=$request->input['sub_amount'];
+    $input['discount']=$request->input['discount'];
+    $input['tax']=$request->input['tax'];
+    $input['total_amount']=$request->input['total_amount'];
+    $input['pay']=$request->input['pay'];
+    $data=PatientBill::create($input);
 
     if($data){
-        if($request->bill_d){
-            foreach($request->bill_d as $b){
-                $bill_d['patient_bill_id']=$data->id;
-                $bill_d['particular']=$b['particular'];
-                $bill_d['amount']=$b['amount'];
-                $details_data=PatientBillDetail::create($bill_d);
+        if($request->testdata){
+            foreach($request->testdata as $b){
+                $testdata['patient_bill_id']=$data->id;
+                $testdata['particular']=$b['name'];
+                $testdata['amount']=$b['price'];
+                $details_data=PatientBillDetail::create($testdata);
             }
         }
     }

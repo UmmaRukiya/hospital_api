@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class PatientBill extends Model
 {
     use HasFactory;
-    protected $fillable=['patient_id', 'sub_amount', 'discount', 'tax', 'total_amount','grand_total','due','pay', 'bill_date'];
+    protected $fillable=['patient_id', 'sub_amount', 'discount', 'tax', 'total_amount','pay', 'bill_date'];
 
     /**
      * Get the patient that owns the PatientBill
