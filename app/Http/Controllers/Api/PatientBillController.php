@@ -18,26 +18,6 @@ class PatientBillController extends BaseController
     }
 
 
-// public function store(Request $request) {
-//     $request->validate([
-//         'input.patient_id' => 'required|exists:patients,id',
-//         'input.bill_date' => 'required|date',
-//         'cartItems' => 'required|array',
-//         'cartItems.*.particulars' => 'required|string',
-//         'cartItems.*.unit' => 'required|integer|min:1',
-//         'cartItems.*.price' => 'required|numeric',
-//     ]);
-
-//     $bill = PatientBill::create($request->input('input'));
-//     foreach ($request->input('cartItems') as $item) {
-//         $bill->details()->create([
-//             'particular' => $item['particulars'],
-//             'amount' => $item['price'],
-//             'unit' => $item['unit'],
-//         ]);
-//     }
-//     return response()->json(['message' => 'Bill created successfully'], 201);
-// }
 public function store(Request $request){
     $input['patient_id']=$request->input['patient_id'];
     $input['bill_date']=$request->input['bill_date'];
