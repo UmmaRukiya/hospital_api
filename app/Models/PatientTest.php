@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class PatientTest extends Model
 {
     use HasFactory;
-    protected $fillable=['patient_id', 'admit_id', 'sub_price', 'vat', 'discount', 'total_amount', 'paid'];
+    protected $fillable=['patient_id', 'admit_id', 'test_date' ,'sub_price', 'vat', 'discount', 'total_amount', 'paid'];
 
     public function patient(): BelongsTo
     {

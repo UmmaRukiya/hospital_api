@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('patient_tests', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('patient_id')->constrained();
+            $table->integer('patient_id');
             $table->integer('admit_id')->nullable();
+            $table->date('test_date')->nullable();
             $table->decimal('sub_price',6,2)->nullable();
             $table->decimal('vat',6,2)->comment('in %');
             $table->decimal('discount',6,2)->nullable();
