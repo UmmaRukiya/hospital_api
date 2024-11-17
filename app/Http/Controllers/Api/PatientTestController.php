@@ -11,7 +11,7 @@ use App\Http\Controllers\Api\BaseController;
 class PatientTestController extends BaseController
 {
     public function index(){
-        $data=PatientTest::with('patient','patientadmit','investlist')->get();
+        $data=PatientTest::with('patient','patientadmit','investlist','details')->get();
         return $this->sendResponse($data,"PatientTest data");
     }
 

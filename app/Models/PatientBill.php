@@ -20,6 +20,10 @@ class PatientBill extends Model
     {
         return $this->belongsTo(Patient::class, 'patient_id');
     }
+    public function patientadmit(): BelongsTo
+    {
+        return $this->belongsTo(PatientAdmit::class,'admit_id');
+    }
 
     // Define the relationship to the PatientBillDetail model
     public function details()

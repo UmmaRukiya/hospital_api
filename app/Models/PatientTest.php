@@ -17,7 +17,7 @@ class PatientTest extends Model
     }
     public function patientadmit(): BelongsTo
     {
-        return $this->belongsTo(PatientAdmit::class);
+        return $this->belongsTo(PatientAdmit::class,'admit_id');
     }
     public function investlist(): BelongsTo
     {

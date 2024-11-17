@@ -13,4 +13,8 @@ class PatientTestDetail extends Model
     {
         return $this->belongsTo(InvestList::class,'inv_list_id');
     }
+    // public function test()
+    // {
+    //     return $this->belongsTo(PatientTest::class,'patient_test_id');
+    // }
 }
