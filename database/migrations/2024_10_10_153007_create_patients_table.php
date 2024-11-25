@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('mother_name')->nullable();
             $table->string('husband_name')->nullable();
             $table->string('marital_status')->nullable();
-            $table->string('email')->nullable();
+            $table->string('email');
+            $table->string('password');
             $table->integer('contact');
             $table->string('gender')->nullable();
             $table->date('birth_date')->nullable();

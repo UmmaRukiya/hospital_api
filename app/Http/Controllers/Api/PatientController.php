@@ -33,4 +33,17 @@ class PatientController extends BaseController
         $patient=$patient->delete();
         return $this->sendResponse($patient,"Patient deleted successfully");
     }
+    public function _login(Request $r)
+    {
+        $data=Student::where('contact',$r->contact)
+                ->where('password',$r->password)
+                ->first()?->toArray();
+        if($data){
+            $d['token']=$data['id'];
+            $d['data']=$data;
+            return $this->sendResponse($d,"User login successfully");
+        }else{
+            return $this->sendError(['error'=>'contact number or password is not correct'],"Unauthorized",400);
+        }
+    }
 }

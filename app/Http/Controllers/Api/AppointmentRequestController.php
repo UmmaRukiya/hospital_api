@@ -10,27 +10,27 @@ use App\Http\Controllers\Api\BaseController;
 class AppointmentRequestController extends BaseController
 {
     public function index(){
-        $data=Appointment_Request::get();
-        return $this->sendResponse($data,"Appointment_Request data");
+        $data=AppointmentRequest::get();
+        return $this->sendResponse($data,"AppointmentRequest data");
     }
 
     public function store(Request $request){
-        $data=Appointment_Request::create($request->all());
-        return $this->sendResponse($data,"Appointment_Request created successfully");
+        $data=AppointmentRequest::create($request->all());
+        return $this->sendResponse($data,"AppointmentRequest created successfully");
     }
-    public function show(Appointment_Request $appointmentrequest){
-        return $this->sendResponse($appointmentrequest,"Appointment_Request created successfully");
+    public function show(AppointmentRequest $appointmentrequest){
+        return $this->sendResponse($appointmentrequest,"AppointmentRequest created successfully");
     }
 
     public function update(Request $request,$id){
 
-        $data=Appointment_Request::where('id',$id)->update($request->all());
-        return $this->sendResponse($id,"Appointment_Request updated successfully");
+        $data=AppointmentRequest::where('id',$id)->update($request->all());
+        return $this->sendResponse($id,"AppointmentRequest updated successfully");
     }
 
-    public function destroy(Appointment_Request $appointmentrequest)
+    public function destroy(AppointmentRequest $appointmentrequest)
     {
         $appointmentrequest=$appointmentrequest->delete();
-        return $this->sendResponse($appointmentrequest,"Appointment_Request deleted successfully");
+        return $this->sendResponse($appointmentrequest,"AppointmentRequest deleted successfully");
     }
 }

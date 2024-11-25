@@ -236,16 +236,6 @@ Route::controller(PatientTestController::class)->group(function(){
     Route::delete('patienttest/{patienttest}','destroy');
 });
 
-// Route::controller(PatientTestDetailController::class)->group(function(){
-//     Route::get('patient_test_detail/index','index');
-//     Route::post('patient_test_detail/create','store');
-//     Route::get('patient_test_detail/{patient_test_detail}','show');
-//     Route::post('patient_test_detail/{id}','update');
-//     Route::delete('patient_test_detail/{patient_test_detail}','destroy');
-// });
-
-
-
 Route::controller(BirthController::class)->group(function(){
     Route::get('birth/index','index');
     Route::post('birth/create','store');
@@ -263,11 +253,11 @@ Route::controller(DeathController::class)->group(function(){
 });
 
 Route::controller(AppointmentRequestController::class)->group(function(){
-    Route::get('appointment_request/index','index');
-    Route::post('appointment_request/create','store');
-    Route::get('appointment_request/{appointment_request}','show');
-    Route::post('appointment_request/{id}','update');
-    Route::delete('appointment_request/{appointment_request}','destroy');
+    Route::get('appointmentrequest/index','index');
+    Route::post('appointmentrequest/create','store');
+    Route::get('appointmentrequest/{appointmentrequest}','show');
+    Route::post('appointmentrequest/{id}','update');
+    Route::delete('appointmentrequest/{appointmentrequest}','destroy');
 });
 // Route::controller(DesignationController::class)->group(function(){
 //     Route::get('designation','index');
