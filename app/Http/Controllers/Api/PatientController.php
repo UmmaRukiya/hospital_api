@@ -35,7 +35,7 @@ class PatientController extends BaseController
     }
     public function _login(Request $r)
     {
-        $data=Student::where('contact',$r->contact)
+        $data=Patient::where('contact',$r->contact)
                 ->where('password',$r->password)
                 ->first()?->toArray();
         if($data){
