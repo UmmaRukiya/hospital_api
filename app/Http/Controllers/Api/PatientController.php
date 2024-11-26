@@ -14,10 +14,32 @@ class PatientController extends BaseController
         return $this->sendResponse($data,"Patient data");
     }
 
+    // public function store(Request $request){
+    //     $data=Patient::create($request->all());
+    //     return $this->sendResponse($data,"Patient created successfully");
+    // }
+
     public function store(Request $request){
-        $data=Patient::create($request->all());
-        return $this->sendResponse($data,"Patient created successfully");
+        // Validate incoming request
+        $validated = $request->validate([
+            'name' => 'required|string',
+            'contact' => 'required|unique:patient,contact',
+            'birth_date' => 'required|date',
+            'email' => 'required|unique:patient,email|email',
+            'password' => 'required|min:6',
+            'c_password' => 'required|same:password',
+        ]);
+
+        // Hash password before storing
+        // $validated['password'] = Hash::make($request->password);
+
+        // Create patient in the database
+        $patient = Patient::create($validated);
+
+        return $this->sendResponse($patient, "Patient created successfully");
     }
+
+
     public function show(Patient $patient){
         return $this->sendResponse($patient,"Patient created successfully");
     }
@@ -45,5 +67,24 @@ class PatientController extends BaseController
         }else{
             return $this->sendError(['error'=>'contact number or password is not correct'],"Unauthorized",400);
         }
+    }
+    public function _register(Request $r){
+        // Validate incoming registration request
+        $validated = $r->validate([
+            'contact' => 'required|unique:patients,contact',
+            'password' => 'required|min:6',
+            'birth_date' => 'required|date',
+            'name' => 'required|string',
+            'email' => 'required|unique:patients,email|email',
+            'c_password' => 'required|same:password',
+        ]);
+
+        // Hash the password before saving
+        // $validated['password'] = Hash::make($r->password);
+
+        // Create new patient
+        $patient = Patient::create($validated);
+
+        return $this->sendResponse($patient, "User registered successfully");
     }
 }
