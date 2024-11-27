@@ -75,6 +75,8 @@ Route::controller(PatientController::class)->group(function(){
     Route::post('patient/{id}','update');
     Route::delete('patient/{patient}','destroy');
     Route::post('patient/login','_login');
+    Route::post('patient/register','_register');
+
 
 });
 Route::controller(NurseController::class)->group(function(){
