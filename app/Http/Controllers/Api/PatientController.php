@@ -14,30 +14,30 @@ class PatientController extends BaseController
         return $this->sendResponse($data,"Patient data");
     }
 
-    // public function store(Request $request){
-    //     $data=Patient::create($request->all());
-    //     return $this->sendResponse($data,"Patient created successfully");
-    // }
-
     public function store(Request $request){
-        // Validate incoming request
-        $validated = $request->validate([
-            'name' => 'required|string',
-            'contact' => 'required|unique:patient,contact',
-            'birth_date' => 'required|date',
-            'email' => 'required|unique:patient,email|email',
-            'password' => 'required|min:6',
-            'c_password' => 'required|same:password',
-        ]);
+        $data=Patient::create($request->all());
+        return $this->sendResponse($data,"Patient created successfully");
+    }
+
+    // public function store(Request $request){
+    //     // Validate incoming request
+    //     $validated = $request->validate([
+    //         'name' => 'required|string',
+    //         'contact' => 'required|unique:patient,contact',
+    //         'birth_date' => 'required|date',
+    //         'email' => 'required|unique:patient,email|email',
+    //         'password' => 'required|min:6',
+    //         'c_password' => 'required|same:password',
+    //     ]);
 
         // Hash password before storing
         // $validated['password'] = Hash::make($request->password);
 
         // Create patient in the database
-        $patient = Patient::create($validated);
+    //     $patient = Patient::create($validated);
 
-        return $this->sendResponse($patient, "Patient created successfully");
-    }
+    //     return $this->sendResponse($patient, "Patient created successfully");
+    // }
 
 
     public function show(Patient $patient){
