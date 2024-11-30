@@ -9,8 +9,12 @@ use App\Http\Controllers\Api\BaseController;
 
 class DoctorController extends BaseController
 {
-    public function index(){
-        $data=Doctor::with('role','designation','department')->get();
+    public function index(Request $request){
+        $data=Doctor::with('role','designation','department');
+        if($request->department_id){
+            $data=$data->where('department_id',$request->department_id);
+        }
+        $data=$data->get();
         return $this->sendResponse($data,"Doctor data");
     }
  /**
