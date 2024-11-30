@@ -8,16 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Schedule extends Model
 {
     use HasFactory;
-    protected $fillable=[ 'employe_id', 'day_id', 'shift_id'];
+    protected $fillable=[ 'doctor_id', 'day_id', 'shift_id'];
 
     /**
      * Get the user that owns the Schedule
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function employe()
+    public function doctor()
     {
-        return $this->belongsTo(Employe::class, 'employe_id');
+        return $this->belongsTo(Doctor::class, 'doctor_id');
     }
     public function day()
     {

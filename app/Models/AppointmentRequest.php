@@ -23,4 +23,8 @@ class AppointmentRequest extends Model
     {
         return $this->belongsTo(Doctor::class, 'doctor_id');
     }
+    public function schedule()
+    {
+        return $this->belongsTo(Schedule::class, 'app_day');
+    }
 }
