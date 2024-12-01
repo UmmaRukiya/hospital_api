@@ -24,7 +24,7 @@ class DoctorController extends BaseController
     {
         $input=$request->all();
         /* for files */
-        $files=[];
+        $files=[]; 
         if($request->hasFile('files')){
             foreach($request->file('files') as $f){
                 $imagename=time().rand(1111,9999).".".$f->extension();

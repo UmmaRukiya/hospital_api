@@ -75,8 +75,7 @@ class PatientController extends BaseController
             'password' => 'required|min:6',
             'birth_date' => 'required|date',
             'name' => 'required|string',
-            'email' => 'required|unique:patients,email|email',
-            'c_password' => 'required|same:password',
+            'email' => 'required|unique:patients,email|email'
         ]);
 
         // Hash the password before saving

@@ -9,9 +9,14 @@ use App\Http\Controllers\Api\BaseController;
 
 class ScheduleController extends BaseController
 {
-    public function index(){
+    public function index( Request $request){
         // Return all schedules with their related doctor, day, and shift
-        $data = Schedule::with('doctor', 'day', 'shift')->get();
+        $data = Schedule::with('doctor', 'day', 'shift');
+        if($request->doctor_id)
+            $data=$data->where('doctor_id', $request->doctor_id);
+
+        $data=$data->get();
+        
         return $this->sendResponse($data, "Schedule data retrieved successfully.");
     }
 

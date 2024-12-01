@@ -5,12 +5,13 @@ namespace App\Http\Controllers\Api;
 // use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\AppointmentRequest;
+use App\Models\Doctor;
 use App\Http\Controllers\Api\BaseController;
 
 class AppointmentRequestController extends BaseController
 {
     public function index(){
-        $data=AppointmentRequest::with('docotor', 'department','schedule')->get();
+        $data=AppointmentRequest::with('doctor', 'department','schedule')->get();
         return $this->sendResponse($data,"AppointmentRequest data");
     }
 

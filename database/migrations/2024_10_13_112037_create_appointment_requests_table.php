@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('appointment_requests', function (Blueprint $table) {
             $table->id();
             $table->integer('department_id');
-            $table->foreignId('doctor_id')->constrained();
+            $table->integer('doctor_id');
             $table->string('patient_name');
             $table->string('email', 100)->nullable();
             $table->string('contact_no', 100);
