@@ -22,7 +22,7 @@ return new class extends Migration
             $table->time('app_time')->nullable();
             $table->bigInteger('serial')->nullable();
             $table->text('problem')->nullable();
-            $table->integer('status')->default(0)->comment('0 inactive,1 active');
+            $table->integer('status')->default(0)->comment('0 expired,1 pending, 2 approved');
             $table->timestamps();
         });
     }
