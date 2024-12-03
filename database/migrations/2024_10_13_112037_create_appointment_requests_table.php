@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('age');
             $table->integer('blood_id')->nullable();
             $table->date('app_date')->nullable();
+            $table->integer('status')->default(1)->comment('0 expired,1 pending, 2 approved');
             $table->timestamps();
         });
     }
