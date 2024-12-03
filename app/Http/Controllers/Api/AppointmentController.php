@@ -16,7 +16,10 @@ class AppointmentController extends BaseController
     }
 
     public function store(Request $request){
-        $data=Appointment::create($request->all());
+        $input=$request->all();
+        $serial_no=Appointment::where('doctor_id',$request->doctor_id)->where('app_date',$request->app_date)->count() + 1;
+        $input['serial']=$serial_no;
+        $data=Appointment::create($input);
         $p=Patient::where('contact',$request->patient_contact)->where('name',$request->patient_name)->first();
         if($p){
             $data=$data;

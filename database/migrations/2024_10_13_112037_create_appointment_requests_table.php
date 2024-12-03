@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer('doctor_id');
             $table->string('patient_name');
             $table->string('email', 100)->nullable();
-            $table->string('contact_no', 100);
+            $table->string('patient_contact', 100);
             $table->string('gender')->nullable();
             $table->string('age');
             $table->integer('blood_id')->nullable();
