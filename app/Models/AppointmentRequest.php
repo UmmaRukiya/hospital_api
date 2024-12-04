@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class AppointmentRequest extends Model
 {
     use HasFactory;
-    protected $fillable=[ 'department_id', 'doctor_id', 'patient_name', 'email', 'patient_contact', 'gender', 'age', 'blood_id', 'app_day', 'app_date', 'session','status'];
+    protected $fillable=[ 'ref_id','department_id', 'doctor_id', 'patient_name', 'email', 'patient_contact', 'gender', 'age', 'blood_id', 'app_day', 'app_date', 'session','status'];
 
     /**
      * Get the user that owns the AppointmentRequest

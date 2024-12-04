@@ -57,7 +57,7 @@ class PatientController extends BaseController
     }
     public function _login(Request $r)
     {
-        $data=Patient::where('contact',$r->contact)
+        $data=Patient::with('appointment')->where('contact',$r->contact)
                 ->where('password',$r->password)
                 ->first()?->toArray();
         if($data){

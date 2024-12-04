@@ -10,8 +10,12 @@ use App\Models\Patient;
 
 class AppointmentController extends BaseController
 {
-    public function index(){
-        $data=Appointment::with('doctor','department')->get();
+    public function index(Request $request){
+        $data=Appointment::with('doctor','department');
+        if($request->ref_id){
+            $data=$data->where('ref_id',$request->ref_id);
+        }
+        $data=$data->get();
         return $this->sendResponse($data,"Appointment data");
     }
 

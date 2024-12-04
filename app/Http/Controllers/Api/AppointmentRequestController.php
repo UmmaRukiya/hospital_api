@@ -10,8 +10,12 @@ use App\Http\Controllers\Api\BaseController;
 
 class AppointmentRequestController extends BaseController
 {
-    public function index(){
-        $data=AppointmentRequest::with('doctor', 'department','schedule')->get();
+    public function index(Request $request){
+        $data=AppointmentRequest::with('doctor', 'department','schedule');
+        if($request->ref_id){
+            $data=$data->where('ref_id',$request->ref_id);
+        }
+        $data=$data->get();
         return $this->sendResponse($data,"AppointmentRequest data");
     }
 
